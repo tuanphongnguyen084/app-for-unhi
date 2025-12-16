@@ -221,20 +221,6 @@
       ]
     },
     {
-      "id": 11,
-      "question": "Đại hội đại biểu lần thứ hai của Đảng (2-1951) có ý nghĩa lịch sử như thế nào? Hãy chọn phương án đúng",
-      "answers": [
-        {
-          "text": "C.Làm cho nhân dân thế giới hiểu về cách mạng Việt Nam",
-          "is_correct": false
-        },
-        {
-          "text": "D.Nêu cao vai trò lãnh đạo cuộc kháng chiến của Đảng và giai cấp công nhân",
-          "is_correct": false
-        }
-      ]
-    },
-    {
       "id": 12,
       "question": "Hội nghị Ban chấp hành Trung ương lần thứ 6 Khóa IV (8/1979) đã thông qua nghị quyết 20-NQ/TW về nội dung gì? Hãy chọn phương án đúng:",
       "answers": [
@@ -297,24 +283,6 @@
         {
           "text": "D.Dùng bạo lực cách mạng để đánh đuổi quân Tưởng về nước",
           "is_correct": true
-        }
-      ]
-    },
-    {
-      "id": 15,
-      "question": "Về xác định nhiệm vụ cốt yếu của cách mạng tư sản dân quyền, Luận cương chánh trị của Đảng Cộng sản Đông Dương nhấn mạnh: “...........”. Hãy chọn phương án đúng điền vào chỗ trống?",
-      "answers": [
-        {
-          "text": "A.\"Vấn đề thổ địa là cái cốt của cách mạng tư sản dân quyền\",",
-          "is_correct": true
-        },
-        {
-          "text": "B.\"Vấn đề thổ địa là cái cốt của cách mạng tư sản\",",
-          "is_correct": false
-        },
-        {
-          "text": "C.\"Vấn đề thổ địa là cái cốt của cách mạng vô sản dân quyền\",",
-          "is_correct": false
         }
       ]
     },
@@ -451,24 +419,6 @@
       ]
     },
     {
-      "id": 22,
-      "question": "Cương lĩnh chính trị đầu tiên xác định lực lượng cơ bản của cách mạng Việt Nam gồm những giai cấp nào và do ai lãnh đạo? Hãy chọn phương án đúng",
-      "answers": [
-        {
-          "text": "A.Giai cấp công nhân, nông dân, trí thức và do giai cấp công nhân lãnh đạo .",
-          "is_correct": false
-        },
-        {
-          "text": "B.Giai cấp công nhân, nông dân và do giai cấp công nhân lãnh đạo",
-          "is_correct": true
-        },
-        {
-          "text": "C.Giai cấp công nhân, nông dân, tiểu tư sản và do giai cấp công nhân lãnh đạo",
-          "is_correct": false
-        }
-      ]
-    },
-    {
       "id": 23,
       "question": "Đại hội VIII đã nêu ra mấy quan điểm về công nghiệp hóa trong thời kỳ đổi mới? Hãy chọn phương án đúng",
       "answers": [
@@ -579,24 +529,6 @@
       ]
     },
     {
-      "id": 28,
-      "question": "Hội nghị nào của Đảng đề ra đường lối cho cách mạng miền Nam được ví với hình ảnh “mồi lửa trên đồng cỏ khô”? Hãy chọn phương án đúng",
-      "answers": [
-        {
-          "text": "A.Hội nghị Trung ương 15 – Khóa II của Đảng (1-1959)",
-          "is_correct": true
-        },
-        {
-          "text": "B.Hội nghị Trung ương 12 – Khóa II của Đảng (3-1957)",
-          "is_correct": false
-        },
-        {
-          "text": "C.Hội nghị Trung ương 13 – Khóa II của Đảng (12-1957)",
-          "is_correct": false
-        }
-      ]
-    },
-    {
       "id": 29,
       "question": "Một trong những đặc trưng của xã hội xã hội chủ nghĩa mà nhân dân ta xây dựng được Đảng ta khẳng định trong Cương lĩnh 1991 (Đại hội VII) là đặc trưng nào sau đây? Hãy chọn phương án đúng:",
       "answers": [
@@ -681,42 +613,6 @@
         {
           "text": "D.Giành một thắng lợi quân sự quyết định để kết thúc chiến tranh trong danh dự",
           "is_correct": true
-        }
-      ]
-    },
-    {
-      "id": 33,
-      "question": "Trong những bài học kinh nghiệm về đổi mới, bài học nào do Đại hội VI của Đảng nêu lên? Hãy chọn phương án đúng:",
-      "answers": [
-        {
-          "text": "A.Đảng phải luôn luôn xuất phát từ thực tế, tôn trọng và hành động theo quy luật khách quan.",
-          "is_correct": true
-        },
-        {
-          "text": "B.Đường lối đúng đắn của Đảng là nhân tố quyết định thành công của sự nghiệp đổi mới.",
-          "is_correct": false
-        },
-        {
-          "text": "C.Đổi mới phải kết hợp với sự phát triển mạnh mẽ của khoa học và công nghệ. D) Trong quá trình đổi mới phải kiên định mục tiêu độc lập dân tộc và chủ nghĩa xã hội trên nền tảng chủ nghĩa Mác - Lênin và tư tưởng Hồ Chí Minh.",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": 34,
-      "question": "Sự kiện nào sau đây cho thấy quyết tâm thống nhất về mặt Nhà nước của Đảng sau khi giải phóng miền Nam. Hãy chọn phương án đúng:",
-      "answers": [
-        {
-          "text": "A.Thắng lợi của cuộc Kháng chiến chống Mỹ cứu nước 1954 - 1975",
-          "is_correct": false
-        },
-        {
-          "text": "B.Thắng lợi của cuộc Tổng tuyển cử bầu Quốc hội chung của cả nước (4-1976)",
-          "is_correct": true
-        },
-        {
-          "text": "C.Thắng lợi của cuộc chiến tranh bảo vệ biên giới phía Bắc và Tây Nam 1979 D) Thắng lợi Tổng tiến công nổi dậy mùa xuân 1975",
-          "is_correct": false
         }
       ]
     },
@@ -848,20 +744,6 @@
         },
         {
           "text": "D.Từ phòng thủ chuyển sang phản công",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": 41,
-      "question": "Đại hội VI của Đảng (1986) đã nêu lên mấy bài học kinh nghiệm về giai đoạn trước đổi mới 1975–1986? Hãy chọn phương án đúng:",
-      "answers": [
-        {
-          "text": "A.4 bài học kinh nghiệm",
-          "is_correct": true
-        },
-        {
-          "text": "B.6 bài học kinh nghiệm",
           "is_correct": false
         }
       ]
@@ -1016,24 +898,6 @@
         },
         {
           "text": "D.Hà Nội",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": 49,
-      "question": "Vì sao ta chủ trương trường kì kháng chiến? Hãy chọn phương án đúng:",
-      "answers": [
-        {
-          "text": "A.Tất cả các ý trên",
-          "is_correct": true
-        },
-        {
-          "text": "B.\"Trường kì kháng chiến\" là nghệ thuật quân sự truyền thống của Việt Nam C) Tương quan lực lượng không có lợi cho ta, ta cần kháng chiến lâu dài để có thêm thời gian xây dựng, phát triển lực lượng",
-          "is_correct": false
-        },
-        {
-          "text": "D.Kháng chiến trường kì chính là để bẻ gãy chiến thuật \"đánh nhanh, giải quyết nhanh\" của Pháp, khoét sâu vào những khó khăn của kẻ địch",
           "is_correct": false
         }
       ]

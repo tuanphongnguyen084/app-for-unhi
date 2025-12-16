@@ -67,38 +67,6 @@
       ]
     },
     {
-      "id": 4,
-      "question": "Nội dung nào sau đây không phải là biện pháp bước đầu trong xây dựng và củng cố chế độ mới của Đảng và Chính phủ ta? Hãy chọn phương án đúng A) Thành lập chính quyền cách mạng ở Trung ương và địa phương",
-      "answers": [
-        {
-          "text": "B.Tổ chức Tổng tuyển cử bầu Quốc hội chung (6/1/1946), chính thức hoá chính quyền của ta và bầu cử Hội đồng nhân dân các cấp",
-          "is_correct": false
-        },
-        {
-          "text": "C.Diệt giặc đói, giặc dốt và giải quyết khó khăn về tài chính",
-          "is_correct": true
-        },
-        {
-          "text": "D.Xây dựng lực lượng vũ trang nhân dân ba thứ quân và thành lập Hội Liên hiệp quốc dân Việt Nam (5- 1946)",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "question": "\"Nâng cao năng lực lãnh đạo và sức chiến đấu của Đảng, phát huy sức mạnh toàn dân tộc, đẩy mạnh toàn diện công cuộc đổi mới; sớm đưa nước ta ra khỏi tình trạng kém phát triển\" là mục tiêu tổng quát được Đảng ta nêu lên ở thời điểm nào? Hãy chọn phương án đúng",
-      "answers": [
-        {
-          "text": "A.Đại hội XI (1/2011)",
-          "is_correct": false
-        },
-        {
-          "text": "B.Đại hội X (4/2006)",
-          "is_correct": true
-        }
-      ]
-    },
-    {
       "id": 6,
       "question": "Nghị quyết về công tác đối với người Việt Nam ở nước ngoài được ban hành vào thời gian nào? Hãy chọn phương án đúng",
       "answers": [
@@ -229,11 +197,6 @@
           "is_correct": false
         }
       ]
-    },
-    {
-      "id": 13,
-      "question": "Đại hội đại biểu toàn quốc lần thứ 2 đã bầu ai là TBT của Đảng",
-      "answers": []
     },
     {
       "id": 14,
@@ -407,24 +370,6 @@
         },
         {
           "text": "D.Mĩ không kí vào văn bản cuối cùng của Hiệp định Giơnevơ",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": 22,
-      "question": "Đại hội III (1960) của Đảng cộng sản Việt Nam xác định nhiệm vụ trung tâm trong suốt thời kỳ quá độ ở nước ta là gì? Hãy chọn phương án đúng: A) Công nghiệp hóa xã hội chủ nghĩa",
-      "answers": [
-        {
-          "text": "B.Xây dựng kinh tế thị trường định hướng XHCN",
-          "is_correct": false
-        },
-        {
-          "text": "C.Công nghiệp hóa, hiện đại hóa đất nước",
-          "is_correct": false
-        },
-        {
-          "text": "D.Hội nhập quốc tế sâu rộng",
           "is_correct": false
         }
       ]
@@ -672,24 +617,6 @@
       ]
     },
     {
-      "id": 34,
-      "question": "Đường lối kết hợp 2 ngọn cờ độc lập dân tộc và CNXH được thể hiện trực tiếp, rõ nhất trong giai đoạn nào của cách mạng Việt Nam? Hãy chọn phương án đúng",
-      "answers": [
-        {
-          "text": "A.1945-1954",
-          "is_correct": false
-        },
-        {
-          "text": "B.1975-1986",
-          "is_correct": false
-        },
-        {
-          "text": "C.1954 -1976",
-          "is_correct": true
-        }
-      ]
-    },
-    {
       "id": 35,
       "question": "Miền Bắc xây dựng CNXH (1954 - 1975) nhằm mục tiêu chủ yếu gì?",
       "answers": [
@@ -708,44 +635,6 @@
         {
           "text": "D.Trở thành nước công nghiệp",
           "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": 37,
-      "question": "Văn kiện Chung quanh vấn đề chiến sách mới ra đời vào thời gian nào? Hãy chọn phương án đúng",
-      "answers": [
-        {
-          "text": "A.Tháng 10 - 1938",
-          "is_correct": false
-        },
-        {
-          "text": "B.Tháng 10 - 1937",
-          "is_correct": false
-        },
-        {
-          "text": "C.Tháng 10 - 1939",
-          "is_correct": false
-        },
-        {
-          "text": "D.Tháng 10 - 1936",
-          "is_correct": true
-        },
-        {
-          "text": "A.Đổi mới quản lý tỉ giá hối đoái.",
-          "is_correct": false
-        },
-        {
-          "text": "B.Đổi mới quản lý xuất nhập khẩu.",
-          "is_correct": false
-        },
-        {
-          "text": "C.Đổi mới quản lý ngành dịch vụ.",
-          "is_correct": false
-        },
-        {
-          "text": "D.Đổi mới quản lý kinh tế nông nghiệp.",
-          "is_correct": true
         }
       ]
     }

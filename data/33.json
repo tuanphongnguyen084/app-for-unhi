@@ -637,44 +637,6 @@
           "is_correct": true
         }
       ]
-    },
-    {
-      "id": 30,
-      "question": "Cuối thế kỷ XIX đầu thế kỷ XX phong trào giải phóng dân tộc diễn ra mạnh mẽ nhất ở đâu? Hãy chọn phương án đúng",
-      "answers": [
-        {
-          "text": "A.Ở các nước nông nghiệp lạc hậu",
-          "is_correct": false
-        },
-        {
-          "text": "B.Ở các nước Tư bản phát triển trung bình",
-          "is_correct": false
-        },
-        {
-          "text": "C.Ở các nước công nghiệp phát triển",
-          "is_correct": false
-        },
-        {
-          "text": "D.Ở các nước thuộc địa",
-          "is_correct": true
-        },
-        {
-          "text": "A.Toàn dân, toàn diện, trường kỳ, tự lực cánh sinh và tranh thủ sự ủng hộ của quốc tế",
-          "is_correct": true
-        },
-        {
-          "text": "B.Thần tốc, táo bạo, táo bạo hơn nữa",
-          "is_correct": true
-        },
-        {
-          "text": "C.Táo bạo, chớp thời cơ nhanh chóng, tự lực cánh sinh",
-          "is_correct": true
-        },
-        {
-          "text": "D.Toàn diện, toàn diện, tranh thủ sự ủng hộ của quốc tế",
-          "is_correct": true
-        }
-      ]
     }
   ]
 }

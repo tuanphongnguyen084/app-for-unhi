@@ -199,24 +199,6 @@
       ]
     },
     {
-      "id": 41,
-      "question": "Ý nào sau đây không nằm trong phương hướng chiến lược đông - xuân 1953 - 1954 được Bộ Chính trị Ban Chấp hành Trung ương Đảng đề ra?",
-      "answers": [
-        {
-          "text": "A.Ngăn chặn tiếp viện của quân Pháp cho lòng chảo Điện Biên",
-          "is_correct": true
-        },
-        {
-          "text": "B.Buộc địch phải bị động phân tán lực lượng đối phó với ta trên những địa bàn xung yếu mà chúng không thể bỏ",
-          "is_correct": false
-        },
-        {
-          "text": "C.Do địch phải phân tán lực lượng mà tạo điều kiện tiêu diệt thêm sinh lực địch D) Tập trung lực lượng mở những cuộc tiến công vào những hướng quan trọng về chiến lược mà địch tương đối yếu để tiêu diệt địch, giải phóng đất đai",
-          "is_correct": false
-        }
-      ]
-    },
-    {
       "id": 42,
       "question": "Đại hội đại biểu toàn quốc lần II của Đảng Cộng sản Đông Dương (2/1951) có ý nghĩa như thế nào?",
       "answers": [

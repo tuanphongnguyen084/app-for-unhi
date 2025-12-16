@@ -309,16 +309,6 @@
       ]
     },
     {
-      "id": 17,
-      "question": "Một trong những đối tượng nghiên cứu của môn học Lịch sử Đảng Cộng sản Việt Nam là gì?",
-      "answers": []
-    },
-    {
-      "id": 18,
-      "question": "Chủ trương “…mở rộng, đa dạng hóa, đa phương hóa quan hệ đối ngoại” được Đảng ta đưa ra tại Hội nghị nào sau đây?",
-      "answers": []
-    },
-    {
       "id": 19,
       "question": "Cuối tháng 8/1945, Quân đội của các nước nào đã có mặt trên lãnh thổ Việt Nam? Hãy chọn phương án đúng",
       "answers": [
@@ -733,20 +723,6 @@
         {
           "text": "D.Cả 3 phương án trên",
           "is_correct": true
-        }
-      ]
-    },
-    {
-      "id": 38,
-      "question": "Những biện pháp đấu tranh với quân Tưởng và tay sai có tác dụng, ý nghĩa như thế nào? Hãy chọn phương án đúng",
-      "answers": [
-        {
-          "text": "A.Hạn chế đến mức thấp nhất các hoạt động chống phá của quân Tưởng và tay sai, làm thất bại âm mưu lật đổ chính quyền cách mạng của chúng",
-          "is_correct": true
-        },
-        {
-          "text": "B.Chính quyền cách mạng vẫn giữ vững và được nhân dân ta tin tưởng ủng hộ C) Làm thất bại âm mưu lật đổ chính quyền cách mạng nước ta của quân Tưởng D) Nhân dân ta càng tin tưởng vào sự lãnh đạo của Đảng và Hồ Chí Minh",
-          "is_correct": false
         }
       ]
     },

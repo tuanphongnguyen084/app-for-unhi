@@ -419,20 +419,6 @@
       ]
     },
     {
-      "id": 20,
-      "question": "Xã hội VN dưới ách thống trị của thực dân pháp có mấy giai cấp, tầng lớp cơ bản",
-      "answers": [
-        {
-          "text": "A.3 giai cấp",
-          "is_correct": false
-        },
-        {
-          "text": "B.5 giai cấp",
-          "is_correct": true
-        }
-      ]
-    },
-    {
       "id": 21,
       "question": "Tác phẩm Đường kách mệnh của Nguyễn Ái Quốc nêu lên bao nhiêu điều thuộc về tư cách người Kách mệnh?",
       "answers": [
@@ -1093,62 +1079,6 @@
       ]
     },
     {
-      "id": 51,
-      "question": "Hội nghị BCH Tw lần thứ nhất của ĐCS Đông Dương 10/1930 đã bầu đồng chí nào làm TBT ?",
-      "answers": [
-        {
-          "text": "A.Hà Huy Tập",
-          "is_correct": false
-        },
-        {
-          "text": "B.Trần PHú",
-          "is_correct": true
-        },
-        {
-          "text": "C.Lê Hồng Phong",
-          "is_correct": false
-        },
-        {
-          "text": "D.Trịnh Đình Cửu",
-          "is_correct": false
-        },
-        {
-          "text": "A.1968",
-          "is_correct": true
-        },
-        {
-          "text": "B.1969",
-          "is_correct": false
-        },
-        {
-          "text": "C.1970",
-          "is_correct": false
-        },
-        {
-          "text": "D.1967",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": 52,
-      "question": "Sắp xếp các chiến lược chiến tranh MỸ và tay sai đã triển khai ở miền Nam theo trật tự thời gian?",
-      "answers": [
-        {
-          "text": "A.Chiến lược chiến tranh đơn phương, chiến lược chiến tranh cục bộ, chiến lược chiến tranh đặc biệt, Chiến lược việt nam hóa chiến tranh",
-          "is_correct": false
-        },
-        {
-          "text": "B.Chiến lược chiến tranh đơn phương, chiến lược chiến tranh đặc biệt, chiến lược chiến tranh cục bộ, chiến lược việt nam hóa chiến tranh",
-          "is_correct": true
-        },
-        {
-          "text": "C.Chiến lược chiến tranh cục vộ, chiến lược chiến tranh đơn phương, chiến lược chiến tranh đặc biệt, việt nam hóa chiến tranh",
-          "is_correct": false
-        }
-      ]
-    },
-    {
       "id": 53,
       "question": "Đại hội VII quốc tế cộng sản (7/1935) xác định kẻ thù nguy hiểm trước mắt của nhân dân thế giới là lực lượng nào?",
       "answers": [
@@ -1457,24 +1387,6 @@
       ]
     },
     {
-      "id": 67,
-      "question": "Sự thất bại của phong trào Đông du, duy tân, khởi nghĩa yên bái chứng tỏ sự bất lực của giai cấp nào trong việc giải quyết các yêu cầu của xã hội VN dưới ách thống trị của TDP?",
-      "answers": [
-        {
-          "text": "A.Giai cấp tư sản",
-          "is_correct": true
-        },
-        {
-          "text": "B.Giai cấp phong kiến",
-          "is_correct": false
-        },
-        {
-          "text": "C.Giai cấp phong kiến và tư sản",
-          "is_correct": false
-        }
-      ]
-    },
-    {
       "id": 68,
       "question": "Phong trào Đồng khởi diễn ra trong thời gian nào ?",
       "answers": [
@@ -1717,11 +1629,6 @@
       ]
     },
     {
-      "id": 79,
-      "question": "Năm 2015, Việt Nam đã thiết lập quan hệ đối tác toàn diện với bao nhiêu nước = 10 nước",
-      "answers": []
-    },
-    {
       "id": 80,
       "question": "Tháng 5/1941, Nguyễn Ái Quốc đã chủ trì hội nghị TW lần thứ mấy BCH TW đảng ?",
       "answers": [
@@ -1937,24 +1844,6 @@
         },
         {
           "text": "D.Dân quân du kích",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": 90,
-      "question": "10/8/1985, Bộ chính trị đã ra nghị quyết số 28 NQ/TW về vấn đề gì?",
-      "answers": [
-        {
-          "text": "A.Về việc phê chuẩn các phương án giá-lương- tiền (dh5)",
-          "is_correct": true
-        },
-        {
-          "text": "B.Phương hướng kinh tế xã hội năm 1985",
-          "is_correct": false
-        },
-        {
-          "text": "C.Phương hướng nhiệm vụ kinh tế- xã hội năm 1986",
           "is_correct": false
         }
       ]
@@ -3280,11 +3169,6 @@
       ]
     },
     {
-      "id": 151,
-      "question": "Vì sao ra đời ở một nước thuộc địa nửa phong kiến, số lượng khoảng 1% dân số nhưng giai cấp công nhân VN lại có đủ khả năng, năng lực lãnh đạo cách mạng VN?",
-      "answers": []
-    },
-    {
       "id": 152,
       "question": "VN kí Hiệp định Giơnevo năm 1954 về Đông Dương là do ?",
       "answers": [
@@ -3500,20 +3384,6 @@
         },
         {
           "text": "D.Nhân nhượng với quân đội Tưởng",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": 162,
-      "question": "Chiến lược chiến tranh nào của Đế quốc mỹ và tay sai được triển khai giai đoạn 1954-1960 ?",
-      "answers": [
-        {
-          "text": "A.Chiến tranh đơn phương",
-          "is_correct": true
-        },
-        {
-          "text": "B.Chiến tranh đặc biệt",
           "is_correct": false
         }
       ]
@@ -3757,20 +3627,6 @@
         {
           "text": "D.Thắng lợi của cuộc Tổng tuyển cử bầu quốc hội chung cả nước (4/1976)",
           "is_correct": true
-        }
-      ]
-    },
-    {
-      "id": 174,
-      "question": "Đại hội lần thứ nhất của ĐCS Đông dương t3/1935 đã quyết định",
-      "answers": [
-        {
-          "text": "A.Bầu Lê Hồng Phong làm tổng bí thư",
-          "is_correct": true
-        },
-        {
-          "text": "B.Bỏ tên VN cộng sản đông dương mà lấy tên Đông dương cộng sản đảng",
-          "is_correct": false
         }
       ]
     },
@@ -4743,44 +4599,6 @@
       ]
     },
     {
-      "id": 219,
-      "question": "BCH TW Đảng họp hội nghị lần thứ nhất (10/1930) tại địa điểm nào?",
-      "answers": [
-        {
-          "text": "A.Hương Cảng (TQ)",
-          "is_correct": true
-        },
-        {
-          "text": "B.Pác Bó",
-          "is_correct": false
-        },
-        {
-          "text": "C.Tân Trào (Tuyên Quang",
-          "is_correct": false
-        },
-        {
-          "text": "D.Macao",
-          "is_correct": false
-        },
-        {
-          "text": "A.3",
-          "is_correct": false
-        },
-        {
-          "text": "B.6",
-          "is_correct": false
-        },
-        {
-          "text": "C.5",
-          "is_correct": true
-        },
-        {
-          "text": "D.4",
-          "is_correct": false
-        }
-      ]
-    },
-    {
       "id": 220,
       "question": "Giai cấp tư sản VN được chia thành những bộ phận nào?",
       "answers": [
@@ -5199,44 +5017,6 @@
       ]
     },
     {
-      "id": 239,
-      "question": "Nội dung coi nền kinh tế có nhiều thành phần là một đặc trưng của thời kỳ quá độ ở nước ta bắt đầu dc đưa ra tại đại hội lần thứ mấy của ĐCS VN",
-      "answers": [
-        {
-          "text": "A.Đại hội 8 (1996)",
-          "is_correct": false
-        },
-        {
-          "text": "B.Đại hội 6",
-          "is_correct": true
-        },
-        {
-          "text": "C.đại hội 9",
-          "is_correct": false
-        },
-        {
-          "text": "D.đại hội 7",
-          "is_correct": false
-        },
-        {
-          "text": "A.1996",
-          "is_correct": false
-        },
-        {
-          "text": "B.2002",
-          "is_correct": false
-        },
-        {
-          "text": "C.2006",
-          "is_correct": false
-        },
-        {
-          "text": "D.1998",
-          "is_correct": true
-        }
-      ]
-    },
-    {
       "id": 240,
       "question": "Chương trình hành động của Đảng cộng sản Đông Dương được công bố vào thời gian nào?",
       "answers": [
@@ -5567,44 +5347,6 @@
       ]
     },
     {
-      "id": 255,
-      "question": "Khi thực dân Pháp tiến công lên Việt Bắc thu đông năm 1947, Đảng ta đã có chỉ thị gì",
-      "answers": [
-        {
-          "text": "A.“phải đánh nhanh thắng nhanh”",
-          "is_correct": false
-        },
-        {
-          "text": "B.Phải phòng ngự trước tiến công sau",
-          "is_correct": false
-        },
-        {
-          "text": "C.Phải phá tan cuộc tấn công mùa đông của giặc pháp",
-          "is_correct": true
-        },
-        {
-          "text": "D.phải thực hiện tiến công chiến lược",
-          "is_correct": false
-        },
-        {
-          "text": "A.15/8/1945",
-          "is_correct": false
-        },
-        {
-          "text": "B.16/8/1945",
-          "is_correct": false
-        },
-        {
-          "text": "C.14/8/1945",
-          "is_correct": false
-        },
-        {
-          "text": "D.13/8/1945",
-          "is_correct": true
-        }
-      ]
-    },
-    {
       "id": 256,
       "question": "Mở rộng địa giới hành chính thủ đô Hà nội là chủ trương của đảng đc đưa ra từ thời điểm nào?",
       "answers": [
@@ -5842,44 +5584,6 @@
         },
         {
           "text": "D.Tạo điều kiện cho cơ quan đầu não rút lên căn cứ VB an toàn",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": 267,
-      "question": "Đại học 7 của đảng (1991) đã nêu lên mấy bài học kinh nghiệm bước đầu về đổi mới",
-      "answers": [
-        {
-          "text": "A.5 bài học kinh nghiệm",
-          "is_correct": true
-        },
-        {
-          "text": "B.4 bài học kinh nghiệm",
-          "is_correct": false
-        },
-        {
-          "text": "C.6 bài học kinh nghiệm",
-          "is_correct": false
-        },
-        {
-          "text": "D.3 bài học kinh nghiệm",
-          "is_correct": false
-        },
-        {
-          "text": "A.Đại hội XI",
-          "is_correct": false
-        },
-        {
-          "text": "B.ĐH X",
-          "is_correct": true
-        },
-        {
-          "text": "C.ĐH XII",
-          "is_correct": false
-        },
-        {
-          "text": "D.ĐH XIII",
           "is_correct": false
         }
       ]
@@ -6672,24 +6376,6 @@
         },
         {
           "text": "D.Xây dựng thành căn cứ quân sự khổng lồ để đe dọa ta( tiêu diệt chứ kphai đe dọa)",
-          "is_correct": false
-        }
-      ]
-    },
-    {
-      "id": 304,
-      "question": "Đường lối cách mạng xã hội chủ nghĩa ở miền bắc được thông qua tại đại hội nào?",
-      "answers": [
-        {
-          "text": "A.Đại hội 2",
-          "is_correct": false
-        },
-        {
-          "text": "B.Đại hội 3",
-          "is_correct": true
-        },
-        {
-          "text": "C.Đại hội 4",
           "is_correct": false
         }
       ]

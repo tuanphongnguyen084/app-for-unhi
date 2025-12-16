@@ -249,8 +249,8 @@
 <body>
     <div class="container">
         <header>
-            <h1>🎯 Lịch sử Đảng 💖</h1>
-            <div class="timer">⏱️ Thời gian: <span id="timerDisplay">60:00</span></div>
+            <h1>Lịch sử Đảng 💖</h1>
+            <div class="timer">Thời gian: <span id="timerDisplay">60:00</span></div>
         </header>
 
         <div class="progress">
@@ -271,15 +271,15 @@
             <div class="score-details" id="scoreDetails"></div>
             <div id="wrongCount" style="font-size: 1.1em; color: #e74c3c; margin: 15px 0;">Câu sai: <strong id="wrongCountNum">0</strong></div>
             <div style="display: flex; gap: 15px; justify-content: center; margin-top: 30px; flex-wrap: wrap;">
-                <button class="btn-restart" onclick="restartQuiz('new')">📝 Làm bộ câu mới</button>
-                <button class="btn-restart" onclick="restartQuiz('unseen')">🔄 Ôn lại câu chưa làm</button>
-                <button class="btn-restart" onclick="restartQuiz('wrong')">❌ Ôn lại câu sai</button>
+                <button class="btn-restart" onclick="restartQuiz('new')">Làm bộ câu mới</button>
+                <button class="btn-restart" onclick="restartQuiz('unseen')">Ôn lại câu chưa làm</button>
+                <button class="btn-restart" onclick="restartQuiz('wrong')">Ôn lại câu sai</button>
             </div>
         </div>
 
         <div class="navigation" id="navigation" style="display: none;">
-            <button class="btn-previous" id="btnPrevious" onclick="previousQuestion()">← Câu trước</button>
-            <button class="btn-next" id="btnNext" onclick="nextQuestion()">Câu tiếp →</button>
+            <button class="btn-previous" id="btnPrevious" onclick="previousQuestion()">Câu trước</button>
+            <button class="btn-next" id="btnNext" onclick="nextQuestion()">Câu tiếp</button>
             <button class="btn-submit" id="btnSubmit" onclick="submitQuiz()" style="display: none;">Nộp bài</button>
         </div>
     </div>
@@ -293,6 +293,7 @@
         let timerInterval;
         let usedQuestionIds = new Set();
         let wrongQuestionIds = new Set();
+        let attemptNumber = 1; // Track which attempt (1-11 then reset)
 
         // Validate question has full 4 answers
         function hasFullAnswers(q) {
@@ -309,9 +310,8 @@
                 for (const file of files) {
                     const response = await fetch(file);
                     const data = await response.json();
-                    // Filter only questions with full 4 answers
-                    const validQuestions = data.questions.filter(hasFullAnswers);
-                    allQuestionsData = allQuestionsData.concat(validQuestions);
+                    // All questions already filtered in JSON
+                    allQuestionsData = allQuestionsData.concat(data.questions);
                 }
 
                 allQuestions = allQuestionsData;
@@ -326,6 +326,10 @@
                 if (savedWrongIds) {
                     wrongQuestionIds = new Set(JSON.parse(savedWrongIds));
                 }
+
+                // Check attempt number
+                const savedAttempt = localStorage.getItem('attemptNumber');
+                attemptNumber = savedAttempt ? parseInt(savedAttempt) : 1;
 
                 selectAndDisplayQuestions('balanced');
                 startTimer();
@@ -372,7 +376,20 @@
             if (mode === 'unseen') {
                 // Get only questions not seen before
                 candidates = allQuestions.filter(q => !usedQuestionIds.has(getQuestionHash(q)));
-                if (candidates.length < 50) {
+                
+                // Check if this is attempt 10 (last attempt of cycle)
+                if (attemptNumber === 10) {
+                    // For attempt 10: take remaining unused + all wrong questions
+                    const wrongQuestions = allQuestions.filter(q => wrongQuestionIds.has(getQuestionHash(q)));
+                    
+                    if (candidates.length + wrongQuestions.length === 0) {
+                        alert('Không có câu để làm. Hãy làm bộ câu mới!');
+                        return;
+                    }
+                    
+                    // Combine remaining + wrong questions
+                    candidates = candidates.concat(wrongQuestions);
+                } else if (candidates.length < 50) {
                     usedQuestionIds.clear();
                     localStorage.removeItem('usedQuestionIds');
                     candidates = allQuestions;
@@ -381,14 +398,9 @@
                 // Get only wrong questions
                 candidates = allQuestions.filter(q => wrongQuestionIds.has(getQuestionHash(q)));
                 if (candidates.length === 0) {
-                    // No wrong questions yet
                     alert('Bạn chưa có câu sai nào. Hãy làm bộ câu mới trước!');
                     selectAndDisplayQuestions('balanced');
                     return;
-                }
-                // If fewer than 50 wrong questions, show only the wrong ones
-                if (candidates.length < 50) {
-                    // Don't pad with other questions - only show wrong ones
                 }
             } else {
                 candidates = allQuestions;
@@ -400,11 +412,13 @@
             // Reset question index
             currentQuestionIndex = 0;
 
-            // Mark as used
-            selectedQuestions.forEach(q => {
-                usedQuestionIds.add(getQuestionHash(q));
-            });
-            localStorage.setItem('usedQuestionIds', JSON.stringify(Array.from(usedQuestionIds)));
+            // Mark as used (only for attempts 1-9)
+            if (attemptNumber < 10) {
+                selectedQuestions.forEach(q => {
+                    usedQuestionIds.add(getQuestionHash(q));
+                });
+                localStorage.setItem('usedQuestionIds', JSON.stringify(Array.from(usedQuestionIds)));
+            }
 
             // Initialize answers
             answers = {};
@@ -509,6 +523,17 @@
 
             // Save wrong questions to localStorage
             localStorage.setItem('wrongQuestionIds', JSON.stringify(Array.from(wrongQuestionIds)));
+
+            // Increment attempt and check if reached 10
+            attemptNumber++;
+            if (attemptNumber > 10) {
+                attemptNumber = 1; // Reset to 1 after lần 10
+                usedQuestionIds.clear(); // Reset used questions for new cycle
+                localStorage.removeItem('usedQuestionIds');
+                wrongQuestionIds.clear(); // Also reset wrong questions for fresh cycle
+                localStorage.removeItem('wrongQuestionIds');
+            }
+            localStorage.setItem('attemptNumber', attemptNumber);
 
             const percentage = Math.round((correctCount / 50) * 100);
             
