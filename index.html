@@ -373,7 +373,26 @@
         function selectAndDisplayQuestions(mode) {
             let candidates;
 
-            if (mode === 'unseen') {
+            if (mode === 'new') {
+                // New set: increment attempt and get new questions
+                attemptNumber++;
+                if (attemptNumber > 9) {
+                    attemptNumber = 1; // Reset cycle
+                    usedQuestionIds.clear();
+                    localStorage.removeItem('usedQuestionIds');
+                    wrongQuestionIds.clear();
+                    localStorage.removeItem('wrongQuestionIds');
+                }
+                localStorage.setItem('attemptNumber', attemptNumber);
+                
+                // Get unused questions
+                candidates = allQuestions.filter(q => !usedQuestionIds.has(getQuestionHash(q)));
+                if (candidates.length < 60) {
+                    usedQuestionIds.clear();
+                    localStorage.removeItem('usedQuestionIds');
+                    candidates = allQuestions;
+                }
+            } else if (mode === 'unseen') {
                 // Get only questions not seen before
                 candidates = allQuestions.filter(q => !usedQuestionIds.has(getQuestionHash(q)));
                 
