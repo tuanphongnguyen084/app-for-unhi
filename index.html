@@ -379,6 +379,7 @@
         let timeRemaining = 3000; // 50 minutes
         let timerInterval;
         let reviewingExamId = -1; // Track which exam we're reviewing
+        let reviewMode = false; // Flag for review mode vs normal exam
 
         // Load all questions and pre-generate 8 exams
         async function loadQuestionsAndGenerateExams() {
@@ -579,9 +580,9 @@
         }
 
         function reviewWrongQuestions() {
-            currentExamId = -1; // Special ID for review mode
+            if (reviewingExamId < 0 || reviewingExamId >= 8) return; // Safety check
             reviewMode = true;
-            const wrongQuestions = examResults[currentExamId + 1]?.wrongQuestions || [];
+            const wrongQuestions = examResults[reviewingExamId]?.wrongQuestions || [];
             
             if (wrongQuestions.length === 0) {
                 alert('Không có câu sai để ôn tập!');
@@ -598,10 +599,9 @@
                 answers[idx] = null;
             });
 
-            document.getElementById('homeScreen').style.display = 'none';
             document.getElementById('resultsScreen').style.display = 'none';
             document.getElementById('quizScreen').style.display = 'block';
-            document.getElementById('examLabel').textContent = `Ôn tập câu sai (${wrongQuestions.length} câu)`;
+            document.getElementById('examLabel').textContent = `Ôn tập câu sai - Đề ${reviewingExamId + 1} (${wrongQuestions.length} câu)`;
 
             displayQuiz();
             startTimer();
@@ -704,8 +704,7 @@
                 reviewBtn.style.display = 'block';
                 // Update the reviewWrongQuestions function to use the current wrong questions
                 reviewBtn.onclick = () => {
-                    const currentExamIdTemp = currentExamId;
-                    selectedQuestions = wrongQuestions;
+                    reviewingExamId = currentExamId; // Set which exam to track for score update
                     startReview(wrongQuestions);
                 };
             } else {
