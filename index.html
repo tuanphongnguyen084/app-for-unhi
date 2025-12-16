@@ -380,6 +380,7 @@
         let timerInterval;
         let reviewingExamId = -1; // Track which exam we're reviewing
         let reviewMode = false; // Flag for review mode vs normal exam
+        let currentReviewWrongQuestions = []; // Store wrong questions for current review
 
         // Load all questions and pre-generate 8 exams
         async function loadQuestionsAndGenerateExams() {
@@ -701,8 +702,7 @@
                 };
                 
                 localStorage.setItem('examResults', JSON.stringify(examResults));
-                reviewMode = false; // Reset review mode
-                reviewingExamId = -1; // Reset reviewing exam ID
+                currentReviewWrongQuestions = updatedWrongQuestions; // Save for potential re-review
             }
 
             const percentage = Math.round((correctCount / selectedQuestions.length) * 100);
@@ -716,10 +716,11 @@
             const reviewBtn = document.getElementById('reviewBtn');
             if (!reviewMode && wrongQuestions.length > 0) {
                 reviewBtn.style.display = 'block';
+                currentReviewWrongQuestions = wrongQuestions; // Save for re-review
                 // Update the reviewWrongQuestions function to use the current wrong questions
                 reviewBtn.onclick = () => {
                     reviewingExamId = currentExamId; // Set which exam to track for score update
-                    startReview(wrongQuestions);
+                    startReview(currentReviewWrongQuestions);
                 };
             } else {
                 reviewBtn.style.display = 'none';
