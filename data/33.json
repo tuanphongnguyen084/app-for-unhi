@@ -1,0 +1,680 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "question": "Khoa học lịch sử Đảng có mấy nhiệm vụ?",
+      "answers": [
+        {
+          "text": "A.1",
+          "is_correct": false
+        },
+        {
+          "text": "B.2",
+          "is_correct": false
+        },
+        {
+          "text": "C.3",
+          "is_correct": false
+        },
+        {
+          "text": "D.4",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "question": "Thắng lợi của cuộc kháng chiến chống Pháp đã ghi nhận sự phát triển và thành công trong lãnh đạo chỉ đạo chiến tranh giải phóng dân tộc của Đảng Lao động Việt Nam về đủ bao nhiêu bài học, kinh nghiệm quý báu? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.5 bài học",
+          "is_correct": true
+        },
+        {
+          "text": "B.3 bài học",
+          "is_correct": false
+        },
+        {
+          "text": "C.4 bài học",
+          "is_correct": false
+        },
+        {
+          "text": "D.6 bài học",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "question": "Tại Hội nghị Trung ương lần thứ 8 (5/1941), Đảng ta đã quyết định tạm gác khẩu hiệu “đánh đổ địa chủ, chia ruộng đất cho dân cày” và thay bằng các khẩu hiệu? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.Tịch thu ruộng đất của đế quốc và Việt gian chia cho dân cày nghèo, chia lại ruộng đất công cho công bằng, giảm tô, giảm tức.",
+          "is_correct": true
+        },
+        {
+          "text": "B.Độc lập dân tộc",
+          "is_correct": false
+        },
+        {
+          "text": "C.“cách mạng ruộng đất”",
+          "is_correct": false
+        },
+        {
+          "text": "D.Dân tộc trên hết, tổ quốc trên hết",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "question": "Năm 2015, Việt Nam đã thiết lập quan hệ đối tác chiến lược lĩnh vực với nước nào? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.Nhật",
+          "is_correct": false
+        },
+        {
+          "text": "B.Mĩ",
+          "is_correct": false
+        },
+        {
+          "text": "C.Hà Lan",
+          "is_correct": true
+        },
+        {
+          "text": "D.Hàn Quốc",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "question": "Quy định điều kiện vào Đảng là những người \"tham gia chủ nghĩa cộng sản, chương trình hành động về nước Cộng sản, hăng hái tranh đấu và dám hy sinh phục tùng nghị quyết Đảng về đóng góp phí, chịu phấn đấu trong một bộ phận Đảng\" được nêu lên ở hội nghị nào? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.Đại hội toàn quốc lần thứ nhất của Đảng",
+          "is_correct": false
+        },
+        {
+          "text": "B.Đại hội hợp nhất thành lập Đảng",
+          "is_correct": true
+        },
+        {
+          "text": "C.Đại hội toàn quốc lần thứ nhất của Đảng",
+          "is_correct": false
+        },
+        {
+          "text": "D.Hội nghị Trung ương tháng 10-1930",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "question": "Nội dung quan trọng của công tác xây dựng, chỉnh đốn Đảng theo nghị quyết Đại hội XII được Đảng xác định là gì? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.kết hợp giữa “xây” và “chống”",
+          "is_correct": false
+        },
+        {
+          "text": "B.ngăn chặn nguy cơ “tự diễn biến”, “tự chuyển hoá” trong nội bộ",
+          "is_correct": false
+        },
+        {
+          "text": "C.đẩy mạnh học tập và làm theo tư tưởng đạo đức, phong cách Hồ Chí Minh”",
+          "is_correct": true
+        },
+        {
+          "text": "D.ngăn chặn, đẩy lùi sự suy thoái về tư tưởng chính trị, đạo đức, lối sống",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "question": "Văn kiện nào sau đây đánh dấu sự ra đời chính thức của chủ nghĩa Mác - Lê nin? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.Tác phẩm Tuyên ngôn của Đảng cộng sản",
+          "is_correct": true
+        },
+        {
+          "text": "B.Tác phẩm Chống Đuy-rinh",
+          "is_correct": false
+        },
+        {
+          "text": "C.Tác phẩm Nhà nước và cách mạng",
+          "is_correct": false
+        },
+        {
+          "text": "D.Tác phẩm Tư bản",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "question": "Cuộc khởi nghĩa Yên Bái diễn ra vào thời gian nào? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.2-1930",
+          "is_correct": true
+        },
+        {
+          "text": "B.3-1930",
+          "is_correct": false
+        },
+        {
+          "text": "C.4-1930",
+          "is_correct": false
+        },
+        {
+          "text": "D.5-1930",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "question": "Giai cấp công nhân Việt Nam có mấy đặc điểm riêng? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.4 đặc điểm",
+          "is_correct": false
+        },
+        {
+          "text": "B.3 đặc điểm",
+          "is_correct": true
+        },
+        {
+          "text": "C.2 đặc điểm",
+          "is_correct": false
+        },
+        {
+          "text": "D.1 đặc điểm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "question": "Cuối năm 1944, ở Cao-Bắc-Lạng, cấp ủy địa phương gặp rủi ro phải bị động chiến tranh du kích trong phạm vi ba tỉnh. Lúc đó, Hồ Chí Minh từ Trung Quốc trở lại Cao Bằng, kịp thời đưa ra quyết định gì? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.Đình chỉ phát động chiến tranh du kích trên quy mô rộng lớn vì chưa đủ điều kiện.",
+          "is_correct": true
+        },
+        {
+          "text": "B.Tổng khởi nghĩa",
+          "is_correct": false
+        },
+        {
+          "text": "C.Khởi nghĩa từng phần, giành chính quyền từng bộ phận",
+          "is_correct": false
+        },
+        {
+          "text": "D.Chuẩn bị chiến tranh du kích",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "question": "Tại Hội nghị thành lập Đảng cộng sản Việt Nam, các đại biểu thảo luận và thống nhất mấy vấn đề lớn mà Nguyễn Ái Quốc nêu ra? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.7 điểm",
+          "is_correct": false
+        },
+        {
+          "text": "B.6 điểm",
+          "is_correct": false
+        },
+        {
+          "text": "C.5 điểm",
+          "is_correct": true
+        },
+        {
+          "text": "D.4 điểm",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "question": "Luận cương chính trị của Đảng Cộng sản Đông Dương được thông qua trong hội nghị nào? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.Hội nghị lần thứ nhất Ban chấp hành Trung ương Đảng (10 - 1931)",
+          "is_correct": false
+        },
+        {
+          "text": "B.Hội nghị lần thứ nhất Ban chấp hành Trung ương Đảng (10 - 1930)",
+          "is_correct": true
+        },
+        {
+          "text": "C.Hội nghị lần thứ nhất Ban chấp hành Trung ương Đảng (10 - 1933)",
+          "is_correct": false
+        },
+        {
+          "text": "D.Hội nghị lần thứ nhất Ban chấp hành Trung ương Đảng (10 - 1932)",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "question": "Từ ngày 2-9-1945 đến trước ngày 6-3-1946, Đảng và chính phủ nước Việt Nam Dân chủ Cộng hòa đã thực hiện chủ trương gì với Trung Hoa Dân Quốc?",
+      "answers": [
+        {
+          "text": "A.Đấu tranh chính trị",
+          "is_correct": false
+        },
+        {
+          "text": "B.Đấu tranh ngoại giao",
+          "is_correct": false
+        },
+        {
+          "text": "C.Đấu tranh vũ trang",
+          "is_correct": false
+        },
+        {
+          "text": "D.Tạm thời hòa hoãn",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "question": "Đảng Cộng sản Việt Nam đã có mấy tên gọi?",
+      "answers": [
+        {
+          "text": "A.5 tên gọi",
+          "is_correct": false
+        },
+        {
+          "text": "B.2 tên gọi",
+          "is_correct": false
+        },
+        {
+          "text": "C.4 tên gọi",
+          "is_correct": false
+        },
+        {
+          "text": "D.3 tên gọi",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "question": "Mặc dù thất bại nhưng các phong trào yêu nước đã có những đóng góp tích cực cho cách mạng Việt Nam. Hãy chọn phương án không đúng?",
+      "answers": [
+        {
+          "text": "A.Đã cho thấy sự bất lực của giai cấp phong kiến và tư sản Việt Nam trong vai trò  lãnh đạo sự nghiệp giải phóng dân tộc Việt Nam",
+          "is_correct": true
+        },
+        {
+          "text": "B.Đã tìm thấy một lực lượng mới để lãnh đạo cách mạng Việt Nam là Đảng cộng sản Việt Nam.",
+          "is_correct": false
+        },
+        {
+          "text": "C.Đã góp phần cổ vũ mạnh mẽ tinh thần yêu nước của nhân dân ta",
+          "is_correct": false
+        },
+        {
+          "text": "D.Đã góp phần thúc đẩy những nhà yêu nước Việt Nam chọn lựa một con đường cứu nước mới, giải phóng dân tộc theo xu thế của thời đại.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "question": "\"Biến hậu phương của Địch thành tiền phương của ta\" là chỉ đạo của Đảng đối với...? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.Vùng tạm bị chiến",
+          "is_correct": true
+        },
+        {
+          "text": "B.Vùng giải phóng",
+          "is_correct": false
+        },
+        {
+          "text": "C.Vùng tranh chấp giữa ta và địch",
+          "is_correct": false
+        },
+        {
+          "text": "D.Vùng lề",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "question": "Việt Nam chính thức là thành viên thứ 150 của Tổ chức Thương mại thế giới (WTO) thời gian nào? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.11/2006",
+          "is_correct": true
+        },
+        {
+          "text": "B.1/2004",
+          "is_correct": false
+        },
+        {
+          "text": "C.11/2007",
+          "is_correct": false
+        },
+        {
+          "text": "D.1/2006",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "question": "Chủ nghĩa tư bản phương Tây chuyển từ giai đoạn tự do cạnh tranh sang giai đoạn độc quyền (giai đoạn đế quốc chủ nghĩa) vào khoảng thời gian nào? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.Từ cuối thế kỷ 20 trở đi",
+          "is_correct": false
+        },
+        {
+          "text": "B.Từ cuối thế kỷ 18 đến đầu thế kỷ 19",
+          "is_correct": false
+        },
+        {
+          "text": "C.Từ cuối thế kỷ 19 đến đầu thế kỷ 20",
+          "is_correct": true
+        },
+        {
+          "text": "D.Từ cuối thế kỷ 17 đến đầu thế kỷ 18",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "question": "Kế hoạch 5 năm lần thứ nhất được thực hiện trong thời gian nào? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.1955-1960",
+          "is_correct": false
+        },
+        {
+          "text": "B.1961-1965",
+          "is_correct": true
+        },
+        {
+          "text": "C.1945-1950",
+          "is_correct": false
+        },
+        {
+          "text": "D.1950-1955",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "question": "Mặt trận Việt Minh, ra đời vào thời gian nào? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.19-5-1942",
+          "is_correct": false
+        },
+        {
+          "text": "B.19-5-1944",
+          "is_correct": false
+        },
+        {
+          "text": "C.19-5-1943",
+          "is_correct": false
+        },
+        {
+          "text": "D.19-5-1941",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": 21,
+      "question": "Đại hội IX đã khẳng định: bước phát triển quan trọng nhằm nhận thức và tư duy lý luận của Đảng ta là gì? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.Kiên trì mục tiêu độc lập dân tộc và chủ nghĩa xã hội.",
+          "is_correct": false
+        },
+        {
+          "text": "B.Lấy chủ nghĩa Mác-Lênin, tư tưởng Hồ Chí Minh làm nền tảng tư tưởng, kim chỉ nam cho hành động.",
+          "is_correct": true
+        },
+        {
+          "text": "C.Chăm lo bồi dưỡng thế hệ cách mạng cho đời sau.",
+          "is_correct": false
+        },
+        {
+          "text": "D.Dựa vào nhân dân.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 22,
+      "question": "Trở thành nước phát triển, theo định hướng XHCN là mục tiêu phấn đấu của Việt Nam vào thời gian nào? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.2025",
+          "is_correct": false
+        },
+        {
+          "text": "B.2030",
+          "is_correct": false
+        },
+        {
+          "text": "C.Giữa thế kỷ XXI",
+          "is_correct": true
+        },
+        {
+          "text": "D.Cuối thế kỷ XXI",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 23,
+      "question": "Pháp buộc phải chuyển sang chiến lược “đánh lâu dài” từ khi nào? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.Sau thất bại của cuộc tiến công lên Việt Bắc mùa đông 1947.",
+          "is_correct": true
+        },
+        {
+          "text": "B.Từ sau chiến thắng Biên giới 1950.",
+          "is_correct": false
+        },
+        {
+          "text": "C.Từ sau khi kiểm soát hoàn toàn các đô thị Bắc vĩ tuyến 16.",
+          "is_correct": false
+        },
+        {
+          "text": "D.Từ sau khi chống mậu động chiến đóng đông bằng Bắc Bộ.",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 24,
+      "question": "Đại hội V của Đảng (1982) đã đưa ra những nhận thức mới nào sau đây về con đường tiến lên chủ nghĩa xã hội ở nước ta? Hãy chọn phương án không đúng: ( câu hỏi hơi vấn đề)",
+      "answers": [
+        {
+          "text": "A.Quan niệm về chặng đường đầu tiên của thời kỳ quá độ đi lên chủ nghĩa xã hội ở nước ta.",
+          "is_correct": false
+        },
+        {
+          "text": "B.Cơ cấu kinh tế nhiều thành phần là một đặc trưng của thời kỳ quá độ lên chủ nghĩa xã hội ở nước ta.",
+          "is_correct": false
+        },
+        {
+          "text": "C.Điều chỉnh nội dung, bước đi, cách làm của công nghiệp hóa xã hội chủ nghĩa trong chặng đường đầu tiên",
+          "is_correct": false
+        },
+        {
+          "text": "D.Xác định 2 nhiệm vụ chiến lược: xây dựng thành công chủ nghĩa xã hội và sẵn sàng chiến đấu, bảo vệ vững chắc Tổ quốc xã hội chủ nghĩa",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": 25,
+      "question": "Năm 1931, nhiệm vụ vạch rõ thái độ của kẻ thù và đề ra các biện pháp hướng dẫn quần chúng đấu tranh Ban Thường vụ Trung ương Đảng đưa ra văn bản nào sau đây? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.Thông cáo về các biện pháp hướng dẫn quần chúng đấu tranh",
+          "is_correct": false
+        },
+        {
+          "text": "B.Thông cáo về thái độ của đế quốc Pháp",
+          "is_correct": false
+        },
+        {
+          "text": "C.Thông cáo về thái độ của đế quốc Pháp và hướng dẫn quần chúng đấu tranh",
+          "is_correct": false
+        },
+        {
+          "text": "D.Thông cáo về việc đế quốc Pháp buộc dân cày ra đầu thú",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": 26,
+      "question": "Vì sao cuộc kháng chiến chống thực dân Pháp của nhân dân ta diễn ra trước nên ở các đô thị? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.Quân Pháp không quen địa bàn, sẽ thuận lợi cho quân dân ta chiến đấu",
+          "is_correct": false
+        },
+        {
+          "text": "B.Tạo điều kiện cho cơ quan đầu não rút lên căn cứ Việt Bắc an toàn",
+          "is_correct": false
+        },
+        {
+          "text": "C.Đô thị là nơi quân Pháp tập trung đông lực lượng nhất",
+          "is_correct": false
+        },
+        {
+          "text": "D.Để giam chân quân Pháp ở các đô thị, bảo vệ cơ quan đầu não và rút dần lực lượng lên Việt Bắc",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": 27,
+      "question": "Lần đầu tiên Đảng bàn vấn đề công nghiệp hóa là ở Đại hội nào? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.Đại hội 5",
+          "is_correct": false
+        },
+        {
+          "text": "B.Đại hội 3",
+          "is_correct": true
+        },
+        {
+          "text": "C.Đại hội 7",
+          "is_correct": false
+        },
+        {
+          "text": "D.Đại hội 9",
+          "is_correct": false
+        }
+      ]
+    },
+    {
+      "id": 28,
+      "question": "Đại hội VI của Đảng (1986) đã chỉ ra những nguyên nhân khách quan dẫn đến những hạn chế của việc hoạch định và thực hiện đường lối giai đoạn 1975 - 1986 là gì? Hãy chọn phương án không đúng:",
+      "answers": [
+        {
+          "text": "A.Đi lên chủ nghĩa xã hội từ một nền kinh tế sản xuất nhỏ, lạc hậu",
+          "is_correct": false
+        },
+        {
+          "text": "B.Do hiệu quả năng nề của chiến tranh kéo dài",
+          "is_correct": false
+        },
+        {
+          "text": "C.Do quan hệ quốc tế thay đổi, nguồn viện trợ nước ngoài giảm mạnh",
+          "is_correct": false
+        },
+        {
+          "text": "D.Bệnh chủ quan duy ý chí, lỗi suy nghĩ và hành động giản đơn, nóng vội",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": 29,
+      "question": "Đại hội VI của Đảng (1986) đã nêu lên những thành tựu nổi bật trong 10 năm cả nước quá độ lên chủ nghĩa xã hội (1975 – 1985) là gì? Hãy chọn phương án không đúng:",
+      "answers": [
+        {
+          "text": "A.Đạt được những thành tựu quan trọng trong sự nghiệp xây dựng chủ nghĩa xã hội",
+          "is_correct": false
+        },
+        {
+          "text": "B.Giành thắng lợi to lớn trong sự nghiệp bảo vệ Tổ quốc, bảo vệ an ninh chính trị và làm nghĩa vụ quốc tế",
+          "is_correct": true
+        },
+        {
+          "text": "C.Thực hiện thắng lợi chủ trương thống nhất nước nhà về mặt Nhà nước",
+          "is_correct": false
+        },
+        {
+          "text": "D.Thúc đẩy đa phương hóa, đa dạng hóa quan hệ đối ngoại, hội nhập quốc tế sâu rộng(dh8)",
+          "is_correct": true
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "question": "Cuối thế kỷ XIX đầu thế kỷ XX phong trào giải phóng dân tộc diễn ra mạnh mẽ nhất ở đâu? Hãy chọn phương án đúng",
+      "answers": [
+        {
+          "text": "A.Ở các nước nông nghiệp lạc hậu",
+          "is_correct": false
+        },
+        {
+          "text": "B.Ở các nước Tư bản phát triển trung bình",
+          "is_correct": false
+        },
+        {
+          "text": "C.Ở các nước công nghiệp phát triển",
+          "is_correct": false
+        },
+        {
+          "text": "D.Ở các nước thuộc địa",
+          "is_correct": true
+        },
+        {
+          "text": "A.Toàn dân, toàn diện, trường kỳ, tự lực cánh sinh và tranh thủ sự ủng hộ của quốc tế",
+          "is_correct": true
+        },
+        {
+          "text": "B.Thần tốc, táo bạo, táo bạo hơn nữa",
+          "is_correct": true
+        },
+        {
+          "text": "C.Táo bạo, chớp thời cơ nhanh chóng, tự lực cánh sinh",
+          "is_correct": true
+        },
+        {
+          "text": "D.Toàn diện, toàn diện, tranh thủ sự ủng hộ của quốc tế",
+          "is_correct": true
+        }
+      ]
+    }
+  ]
+}

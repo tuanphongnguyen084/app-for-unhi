@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - 50 Câu Hỏi Trắc Nghiệm</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 20px;
+        }
+
+        header h1 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .timer {
+            font-size: 1.2em;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .progress {
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: #ecf0f1;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        .progress-text {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
+        .question-container {
+            margin: 30px 0;
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .question-number {
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .question-text {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .answers {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .answer {
+            padding: 15px;
+            border: 2px solid #ecf0f1;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #f9f9f9;
+        }
+
+        .answer:hover {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .answer input[type="radio"] {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .answer label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            width: 100%;
+        }
+
+        .answer.selected {
+            border-color: #667eea;
+            background: #f0f4ff;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 30px;
+        }
+
+        button {
+            padding: 12px 30px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .btn-previous {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .btn-previous:hover:not(:disabled) {
+            background: #7f8c8d;
+        }
+
+        .btn-previous:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .btn-next {
+            background: #667eea;
+            color: white;
+            flex-grow: 1;
+        }
+
+        .btn-next:hover {
+            background: #5568d3;
+        }
+
+        .btn-submit {
+            background: #27ae60;
+            color: white;
+            flex-grow: 1;
+        }
+
+        .btn-submit:hover {
+            background: #229954;
+        }
+
+        .results {
+            display: none;
+            text-align: center;
+        }
+
+        .results.show {
+            display: block;
+        }
+
+        .results h2 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .score {
+            font-size: 3em;
+            color: #667eea;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        .score-details {
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .btn-restart {
+            background: #667eea;
+            color: white;
+            padding: 15px 40px;
+            font-size: 1.1em;
+        }
+
+        .btn-restart:hover {
+            background: #5568d3;
+        }
+
+        .loading {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin: 50px 0;
+        }
+
+        .spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Quiz - Trắc Nghiệm</h1>
+            <div class="timer">⏱️ Thời gian: <span id="timerDisplay">60:00</span></div>
+        </header>
+
+        <div class="progress">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-text"><span id="progressText">0/50</span></div>
+        </div>
+
+        <div id="quizContent" class="loading">
+            <div class="spinner"></div>
+            <p>Đang tải câu hỏi...</p>
+        </div>
+
+        <div class="results" id="results">
+            <h2>✅ Hoàn thành!</h2>
+            <div class="score" id="scoreDisplay">0/50</div>
+            <div class="score-details" id="scoreDetails"></div>
+            <div id="wrongCount" style="font-size: 1.1em; color: #e74c3c; margin: 15px 0;">Câu sai: <strong id="wrongCountNum">0</strong></div>
+            <div style="display: flex; gap: 15px; justify-content: center; margin-top: 30px; flex-wrap: wrap;">
+                <button class="btn-restart" onclick="restartQuiz('new')">📝 Làm bộ câu mới</button>
+                <button class="btn-restart" onclick="restartQuiz('unseen')">🔄 Ôn lại câu chưa làm</button>
+                <button class="btn-restart" onclick="restartQuiz('wrong')">❌ Ôn lại câu sai</button>
+            </div>
+        </div>
+
+        <div class="navigation" id="navigation" style="display: none;">
+            <button class="btn-previous" id="btnPrevious" onclick="previousQuestion()">← Câu trước</button>
+            <button class="btn-next" id="btnNext" onclick="nextQuestion()">Câu tiếp →</button>
+            <button class="btn-submit" id="btnSubmit" onclick="submitQuiz()" style="display: none;">Nộp bài</button>
+        </div>
+    </div>
+
+    <script>
+        let allQuestions = [];
+        let selectedQuestions = [];
+        let currentQuestionIndex = 0;
+        let answers = {};
+        let timeRemaining = 3600; // 60 minutes in seconds
+        let timerInterval;
+        let usedQuestionIds = new Set();
+        let wrongQuestionIds = new Set();
+
+        // Validate question has full 4 answers
+        function hasFullAnswers(q) {
+            return q.answers && q.answers.length === 4 && 
+                   q.answers.every(a => a.text && a.text.trim().length > 0);
+        }
+
+        // Load questions from JSON files
+        async function loadQuestions() {
+            try {
+                const files = ['data/1.json', 'data/11.json', 'data/22.json', 'data/33.json', 'data/44.json', 'data/55.json'];
+                let allQuestionsData = [];
+
+                for (const file of files) {
+                    const response = await fetch(file);
+                    const data = await response.json();
+                    // Filter only questions with full 4 answers
+                    const validQuestions = data.questions.filter(hasFullAnswers);
+                    allQuestionsData = allQuestionsData.concat(validQuestions);
+                }
+
+                allQuestions = allQuestionsData;
+                
+                // Restore tracking data from localStorage
+                const savedUsedIds = localStorage.getItem('usedQuestionIds');
+                if (savedUsedIds) {
+                    usedQuestionIds = new Set(JSON.parse(savedUsedIds));
+                }
+                
+                const savedWrongIds = localStorage.getItem('wrongQuestionIds');
+                if (savedWrongIds) {
+                    wrongQuestionIds = new Set(JSON.parse(savedWrongIds));
+                }
+
+                selectAndDisplayQuestions('balanced');
+                startTimer();
+            } catch (error) {
+                console.error('Error loading questions:', error);
+                document.getElementById('quizContent').innerHTML = '<p style="color: red;">❌ Lỗi khi tải câu hỏi. Vui lòng kiểm tra lại.</p>';
+            }
+        }
+
+        // Balanced selection: mix questions from different test sets
+        function selectBalancedQuestions(availableQuestions, count) {
+            // Group by question text to identify source
+            const bySource = {};
+            availableQuestions.forEach(q => {
+                const key = q.question.substring(0, 20);
+                if (!bySource[key]) bySource[key] = [];
+                bySource[key].push(q);
+            });
+
+            const selected = [];
+            const sources = Object.keys(bySource);
+            
+            // Round-robin selection from different sources
+            let sourceIndex = 0;
+            while (selected.length < count && sources.length > 0) {
+                const source = sources[sourceIndex % sources.length];
+                if (bySource[source].length > 0) {
+                    const randomIdx = Math.floor(Math.random() * bySource[source].length);
+                    selected.push(bySource[source][randomIdx]);
+                    bySource[source].splice(randomIdx, 1);
+                }
+                sourceIndex++;
+                if (bySource[source] && bySource[source].length === 0) {
+                    sources.splice(sourceIndex % sources.length, 1);
+                }
+            }
+
+            return selected;
+        }
+
+        function selectAndDisplayQuestions(mode) {
+            let candidates;
+
+            if (mode === 'unseen') {
+                // Get only questions not seen before
+                candidates = allQuestions.filter(q => !usedQuestionIds.has(getQuestionHash(q)));
+                if (candidates.length < 50) {
+                    usedQuestionIds.clear();
+                    localStorage.removeItem('usedQuestionIds');
+                    candidates = allQuestions;
+                }
+            } else if (mode === 'wrong') {
+                // Get only wrong questions
+                candidates = allQuestions.filter(q => wrongQuestionIds.has(getQuestionHash(q)));
+                if (candidates.length < 5) {
+                    // Not enough wrong questions
+                    alert('Bạn chưa có đủ câu sai để ôn tập (cần ít nhất 5 câu)');
+                    selectAndDisplayQuestions('balanced');
+                    return;
+                }
+                // Pad with random if fewer than 50
+                if (candidates.length < 50) {
+                    const other = allQuestions.filter(q => !wrongQuestionIds.has(getQuestionHash(q)));
+                    const padding = selectBalancedQuestions(other, 50 - candidates.length);
+                    candidates = candidates.concat(padding);
+                }
+            } else {
+                candidates = allQuestions;
+            }
+
+            // Select questions
+            selectedQuestions = selectBalancedQuestions(candidates, Math.min(50, candidates.length));
+
+            // Mark as used
+            selectedQuestions.forEach(q => {
+                usedQuestionIds.add(getQuestionHash(q));
+            });
+            localStorage.setItem('usedQuestionIds', JSON.stringify(Array.from(usedQuestionIds)));
+
+            // Initialize answers
+            answers = {};
+            selectedQuestions.forEach((q, idx) => {
+                answers[idx] = null;
+            });
+
+            displayQuiz();
+        }
+
+        function getQuestionHash(q) {
+            return q.question.substring(0, 50) + '|' + q.answers.map(a => a.text).join('|');
+        }
+
+        function displayQuiz() {
+            const quizContent = document.getElementById('quizContent');
+            const navigation = document.getElementById('navigation');
+            
+            quizContent.innerHTML = '';
+            navigation.style.display = 'flex';
+
+            const q = selectedQuestions[currentQuestionIndex];
+            
+            let html = `
+                <div class="question-container">
+                    <div class="question-header">
+                        <span class="question-number">Câu ${currentQuestionIndex + 1}/50</span>
+                    </div>
+                    <div class="question-text">${q.question}</div>
+                    <div class="answers" id="answers">
+            `;
+
+            q.answers.forEach((answer, idx) => {
+                const isChecked = answers[currentQuestionIndex] === idx ? 'checked' : '';
+                html += `
+                    <label class="answer ${isChecked ? 'selected' : ''}">
+                        <input type="radio" name="answer" value="${idx}" ${isChecked} onchange="selectAnswer(${idx})">
+                        <span>${answer.text}</span>
+                    </label>
+                `;
+            });
+
+            html += `</div></div>`;
+            quizContent.innerHTML = html;
+
+            // Update progress
+            const progress = ((currentQuestionIndex + 1) / 50) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressText').textContent = `${currentQuestionIndex + 1}/50`;
+
+            // Update buttons
+            document.getElementById('btnPrevious').disabled = currentQuestionIndex === 0;
+            
+            if (currentQuestionIndex === selectedQuestions.length - 1) {
+                document.getElementById('btnNext').style.display = 'none';
+                document.getElementById('btnSubmit').style.display = 'block';
+            } else {
+                document.getElementById('btnNext').style.display = 'block';
+                document.getElementById('btnSubmit').style.display = 'none';
+            }
+        }
+
+        function selectAnswer(answerIndex) {
+            answers[currentQuestionIndex] = answerIndex;
+            displayQuiz();
+        }
+
+        function previousQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                displayQuiz();
+            }
+        }
+
+        function nextQuestion() {
+            if (currentQuestionIndex < selectedQuestions.length - 1) {
+                currentQuestionIndex++;
+                displayQuiz();
+            }
+        }
+
+        function submitQuiz() {
+            clearInterval(timerInterval);
+            
+            let correctCount = 0;
+            
+            selectedQuestions.forEach((q, idx) => {
+                const selectedAnswerIdx = answers[idx];
+                const isCorrect = selectedAnswerIdx !== null && q.answers[selectedAnswerIdx].is_correct;
+                
+                if (isCorrect) {
+                    correctCount++;
+                } else {
+                    // Track wrong answer
+                    wrongQuestionIds.add(getQuestionHash(q));
+                }
+            });
+
+            // Save wrong questions to localStorage
+            localStorage.setItem('wrongQuestionIds', JSON.stringify(Array.from(wrongQuestionIds)));
+
+            const percentage = Math.round((correctCount / 50) * 100);
+            
+            document.getElementById('quizContent').innerHTML = '';
+            document.getElementById('navigation').style.display = 'none';
+            document.getElementById('scoreDisplay').textContent = `${correctCount}/50`;
+            document.getElementById('scoreDetails').textContent = `Điểm: ${percentage}%`;
+            document.getElementById('wrongCountNum').textContent = 50 - correctCount;
+            document.getElementById('results').classList.add('show');
+        }
+
+        function restartQuiz(mode) {
+            // Reset UI
+            document.getElementById('results').classList.remove('show');
+            document.getElementById('quizContent').innerHTML = '<div class="spinner"></div><p>Đang tải câu hỏi...</p>';
+            document.getElementById('quizContent').classList.add('loading');
+            
+            // Reset timer
+            timeRemaining = 3600;
+            document.getElementById('timerDisplay').textContent = '60:00';
+            
+            // Load new questions
+            selectAndDisplayQuestions(mode);
+            startTimer();
+        }
+
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                const minutes = Math.floor(timeRemaining / 60);
+                const seconds = timeRemaining % 60;
+                document.getElementById('timerDisplay').textContent = 
+                    `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    submitQuiz();
+                }
+            }, 1000);
+        }
+
+        // Load questions when page loads
+        window.addEventListener('load', loadQuestions);
+    </script>
+</body>
+</html>
