@@ -580,7 +580,10 @@
         }
 
         function reviewWrongQuestions() {
-            if (reviewingExamId < 0 || reviewingExamId >= 8) return; // Safety check
+            if (reviewingExamId < 0 || reviewingExamId >= 8) {
+                alert('Không có câu sai để ôn tập!');
+                return;
+            }
             reviewMode = true;
             const wrongQuestions = examResults[reviewingExamId]?.wrongQuestions || [];
             
