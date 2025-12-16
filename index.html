@@ -597,9 +597,8 @@
             selectedQuestions = wrongQuestions;
             currentQuestionIndex = 0;
             answers = {};
-            timeRemaining = Math.max(1800, wrongQuestions.length * 30); // Min 30 min, or 30 sec per question
+            timeRemaining = Math.max(1800, wrongQuestions.length * 30);
 
-            // Initialize answers
             selectedQuestions.forEach((q, idx) => {
                 answers[idx] = null;
             });
@@ -742,7 +741,8 @@
 
             document.getElementById('resultsScreen').style.display = 'none';
             document.getElementById('quizScreen').style.display = 'block';
-            document.getElementById('examLabel').textContent = `Ôn tập câu sai (${wrongQuestions.length} câu)`;
+            // Display with exam ID for consistency
+            document.getElementById('examLabel').textContent = `Ôn tập câu sai - Đề ${currentExamId + 1} (${wrongQuestions.length} câu)`;
 
             displayQuiz();
             startTimer();
