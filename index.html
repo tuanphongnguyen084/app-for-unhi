@@ -583,22 +583,18 @@
         }
 
         function reviewWrongQuestions() {
-            if (reviewingExamId < 0 || reviewingExamId >= 8) {
+            // This function is called from review button on results screen
+            // Use currentReviewWrongQuestions that was saved during submitQuiz
+            if (currentReviewWrongQuestions.length === 0) {
                 alert('Không có câu sai để ôn tập!');
                 return;
             }
+            
             reviewMode = true;
-            const wrongQuestions = examResults[reviewingExamId]?.wrongQuestions || [];
-            
-            if (wrongQuestions.length === 0) {
-                alert('Không có câu sai để ôn tập!');
-                return;
-            }
-            
-            selectedQuestions = wrongQuestions;
+            selectedQuestions = currentReviewWrongQuestions;
             currentQuestionIndex = 0;
             answers = {};
-            timeRemaining = Math.max(1800, wrongQuestions.length * 30);
+            timeRemaining = Math.max(1800, selectedQuestions.length * 30);
 
             selectedQuestions.forEach((q, idx) => {
                 answers[idx] = null;
@@ -606,13 +602,19 @@
 
             document.getElementById('resultsScreen').style.display = 'none';
             document.getElementById('quizScreen').style.display = 'block';
-            document.getElementById('examLabel').textContent = `Ôn tập câu sai - Đề ${reviewingExamId + 1} (${wrongQuestions.length} câu)`;
+            document.getElementById('examLabel').textContent = `Ôn tập câu sai - Đề ${currentExamId + 1} (${selectedQuestions.length} câu)`;
 
             displayQuiz();
             startTimer();
         }
 
         function displayQuiz() {
+            if (!selectedQuestions || selectedQuestions.length === 0) {
+                alert('Không có câu hỏi để hiển thị!');
+                goHome();
+                return;
+            }
+            
             const q = selectedQuestions[currentQuestionIndex];
             const progress = ((currentQuestionIndex) / selectedQuestions.length) * 100;
 
