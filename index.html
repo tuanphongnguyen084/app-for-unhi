@@ -40,10 +40,66 @@
             margin-bottom: 10px;
         }
 
+        /* Home Screen */
+        #homeScreen {
+            text-align: center;
+        }
+
+        .exam-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .exam-btn {
+            padding: 20px;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            min-height: 100px;
+            justify-content: center;
+        }
+
+        .exam-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(255, 20, 147, 0.4);
+        }
+
+        .exam-title {
+            font-size: 0.95em;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .exam-result {
+            font-size: 0.75em;
+            opacity: 1;
+            color: white;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        }
+
+        /* Quiz Screen */
+        #quizScreen {
+            display: none;
+        }
+
         .timer {
             font-size: 1.2em;
             color: #e74c3c;
             font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         .progress {
@@ -89,6 +145,11 @@
             font-size: 1.1em;
         }
 
+        .exam-label {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+
         .question-text {
             font-size: 1.2em;
             color: #333;
@@ -102,101 +163,88 @@
             gap: 12px;
         }
 
-        .answer {
+        .answer-option {
+            display: flex;
+            align-items: center;
             padding: 15px;
+            background: #f8f9fa;
             border: 2px solid #ecf0f1;
             border-radius: 8px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            background: #f9f9f9;
+            transition: all 0.2s;
         }
 
-        .answer:hover {
+        .answer-option:hover {
+            background: #f0f0f0;
             border-color: #ff69b4;
-            background: #ffe0f0;
         }
 
-        .answer input[type="radio"] {
-            margin-right: 10px;
+        .answer-option input[type="radio"] {
+            margin-right: 12px;
             cursor: pointer;
         }
 
-        .answer label {
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            width: 100%;
+        .answer-option input[type="radio"]:checked + label {
+            color: #ff69b4;
+            font-weight: bold;
         }
 
-        .answer.selected {
-            border-color: #ff69b4;
-            background: #ffe0f0;
+        .answer-option label {
+            flex: 1;
+            cursor: pointer;
+            margin: 0;
         }
 
         .navigation {
             display: flex;
             justify-content: space-between;
-            gap: 10px;
             margin-top: 30px;
+            gap: 10px;
         }
 
         button {
-            padding: 12px 30px;
-            font-size: 1em;
+            padding: 12px 24px;
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
+            border-radius: 6px;
+            font-size: 1em;
             font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
         }
 
-        .btn-previous {
-            background: #95a5a6;
-            color: white;
+        .btn-previous, .btn-next {
+            background: #ecf0f1;
+            color: #333;
+            flex: 1;
         }
 
-        .btn-previous:hover:not(:disabled) {
-            background: #7f8c8d;
+        .btn-previous:hover, .btn-next:hover {
+            background: #bdc3c7;
         }
 
-        .btn-previous:disabled {
+        .btn-previous:disabled, .btn-next:disabled {
             opacity: 0.5;
             cursor: not-allowed;
         }
 
-        .btn-next {
-            background: #ff69b4;
-            color: white;
-            flex-grow: 1;
-        }
-
-        .btn-next:hover {
-            background: #ff1493;
-        }
-
         .btn-submit {
-            background: #c2185b;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
             color: white;
-            flex-grow: 1;
+            flex: 1;
         }
 
         .btn-submit:hover {
-            background: #a01545;
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
         }
 
-        .results {
+        /* Results Screen */
+        #resultsScreen {
             display: none;
             text-align: center;
         }
 
-        .results.show {
-            display: block;
-        }
-
-        .results h2 {
-            color: #333;
-            font-size: 2em;
-            margin-bottom: 20px;
+        .results-content {
+            margin: 30px 0;
         }
 
         .score {
@@ -207,31 +255,42 @@
         }
 
         .score-details {
-            font-size: 1.2em;
+            font-size: 1.3em;
             color: #7f8c8d;
-            margin-bottom: 30px;
+            margin: 10px 0;
         }
 
-        .btn-restart {
-            background: #ff69b4;
-            color: white;
-            padding: 15px 40px;
+        .wrong-count {
             font-size: 1.1em;
+            color: #e74c3c;
+            margin: 20px 0;
         }
 
-        .btn-restart:hover {
-            background: #ff1493;
+        .result-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            justify-content: center;
         }
 
-        .loading {
-            text-align: center;
-            color: #7f8c8d;
-            font-size: 1.2em;
-            margin: 50px 0;
+        .btn-home, .btn-retry {
+            padding: 12px 30px;
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-home:hover, .btn-retry:hover {
+            box-shadow: 0 5px 15px rgba(255, 20, 147, 0.3);
         }
 
         .spinner {
-            border: 4px solid #f3f3f3;
+            border: 4px solid #ecf0f1;
             border-top: 4px solid #ff69b4;
             border-radius: 50%;
             width: 40px;
@@ -244,65 +303,85 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
             <h1>Lịch sử Đảng 💖</h1>
-            <div class="timer">Thời gian: <span id="timerDisplay">50:00</span></div>
         </header>
 
-        <div class="progress">
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill"></div>
+        <!-- Home Screen: Select Exam -->
+        <div id="homeScreen">
+            <h2>Chọn đề thi</h2>
+            <div class="exam-grid" id="examGrid"></div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quizScreen">
+            <div class="timer">Thời gian: <span id="timerDisplay">50:00</span></div>
+            <div class="progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-text">
+                    <span class="exam-label" id="examLabel">Đề 1</span>
+                    <span id="progressText">0/60</span>
+                </div>
             </div>
-            <div class="progress-text"><span id="progressText">0/60</span></div>
-        </div>
 
-        <div id="quizContent" class="loading">
-            <div class="spinner"></div>
-            <p>Đang tải câu hỏi...</p>
-        </div>
+            <div class="question-container">
+                <div class="question-header">
+                    <span class="question-number" id="questionNumber">Câu 1/60</span>
+                </div>
+                <div class="question-text" id="questionText"></div>
+                <div class="answers" id="answersContainer"></div>
+            </div>
 
-        <div class="results" id="results">
-            <h2>✅ Hoàn thành!</h2>
-            <div class="score" id="scoreDisplay">0/60</div>
-            <div class="score-details" id="scoreDetails"></div>
-            <div id="wrongCount" style="font-size: 1.1em; color: #e74c3c; margin: 15px 0;">Câu sai: <strong id="wrongCountNum">0</strong></div>
-            <div style="display: flex; gap: 15px; justify-content: center; margin-top: 30px; flex-wrap: wrap;">
-                <button class="btn-restart" onclick="restartQuiz('new')">Làm bộ câu mới</button>
-                <button class="btn-restart" onclick="restartQuiz('unseen')">Ôn lại câu chưa làm</button>
-                <button class="btn-restart" onclick="restartQuiz('wrong')">Ôn lại câu sai</button>
+            <div class="navigation">
+                <button class="btn-previous" id="btnPrevious" onclick="previousQuestion()">Câu trước</button>
+                <button class="btn-next" id="btnNext" onclick="nextQuestion()">Câu tiếp</button>
+                <button class="btn-submit" id="btnSubmit" onclick="submitQuiz()" style="display: none;">Nộp bài</button>
+                <button class="btn-home" onclick="goHome()" style="background: #7f8c8d; flex: 0.5;">Quay lại</button>
             </div>
         </div>
 
-        <div class="navigation" id="navigation" style="display: none;">
-            <button class="btn-previous" id="btnPrevious" onclick="previousQuestion()">Câu trước</button>
-            <button class="btn-next" id="btnNext" onclick="nextQuestion()">Câu tiếp</button>
-            <button class="btn-submit" id="btnSubmit" onclick="submitQuiz()" style="display: none;">Nộp bài</button>
+        <!-- Results Screen -->
+        <div id="resultsScreen">
+            <h2>Kết quả bài thi</h2>
+            <div class="results-content">
+                <div class="score" id="scoreDisplay">0/60</div>
+                <div class="score-details" id="scoreDetails">Điểm: 0%</div>
+                <div class="wrong-count">Câu sai: <span id="wrongCountNum">0</span></div>
+            </div>
+            <div class="result-buttons">
+                <button class="btn-retry" id="retryBtn" onclick="retryExam()">Làm lại</button>
+                <button class="btn-home" id="reviewBtn" onclick="reviewWrongQuestions()" style="display: none; background: linear-gradient(135deg, #9c27b0 0%, #7b1fa2 100%);">Ôn tập câu sai</button>
+                <button class="btn-home" onclick="goHome()">Quay lại</button>
+            </div>
         </div>
     </div>
 
     <script>
         let allQuestions = [];
+        let exams = []; // 8 exams, each with 60 questions
+        let examResults = {}; // Store results for each exam {examId: {correct, total, wrongQuestions: []}}
+        let completedExams = new Set(); // Track completed exams
+        let currentExamId = -1;
         let selectedQuestions = [];
         let currentQuestionIndex = 0;
         let answers = {};
-        let timeRemaining = 3000; // 50 minutes in seconds
+        let timeRemaining = 3000; // 50 minutes
         let timerInterval;
-        let usedQuestionIds = new Set();
-        let wrongQuestionIds = new Set();
-        let attemptNumber = 1; // Track which attempt (1-9 then reset)
+        let reviewingExamId = -1; // Track which exam we're reviewing
 
-        // Validate question has full 4 answers
-        function hasFullAnswers(q) {
-            return q.answers && q.answers.length === 4 && 
-                   q.answers.every(a => a.text && a.text.trim().length > 0);
-        }
-
-        // Load questions from JSON files
-        async function loadQuestions() {
+        // Load all questions and pre-generate 8 exams
+        async function loadQuestionsAndGenerateExams() {
             try {
                 const files = ['data/1.json', 'data/11.json', 'data/22.json', 'data/33.json', 'data/44.json', 'data/55.json'];
                 let allQuestionsData = [];
@@ -310,190 +389,251 @@
                 for (const file of files) {
                     const response = await fetch(file);
                     const data = await response.json();
-                    // All questions already filtered in JSON
                     allQuestionsData = allQuestionsData.concat(data.questions);
                 }
 
                 allQuestions = allQuestionsData;
-                
-                // Restore tracking data from localStorage
-                const savedUsedIds = localStorage.getItem('usedQuestionIds');
-                if (savedUsedIds) {
-                    usedQuestionIds = new Set(JSON.parse(savedUsedIds));
-                }
-                
-                const savedWrongIds = localStorage.getItem('wrongQuestionIds');
-                if (savedWrongIds) {
-                    wrongQuestionIds = new Set(JSON.parse(savedWrongIds));
+                console.log(`Loaded ${allQuestions.length} questions`);
+
+                // Load completed exams and results from localStorage
+                const savedCompleted = localStorage.getItem('completedExams');
+                if (savedCompleted) {
+                    completedExams = new Set(JSON.parse(savedCompleted));
                 }
 
-                // Check attempt number
-                const savedAttempt = localStorage.getItem('attemptNumber');
-                attemptNumber = savedAttempt ? parseInt(savedAttempt) : 1;
+                const savedResults = localStorage.getItem('examResults');
+                if (savedResults) {
+                    examResults = JSON.parse(savedResults);
+                }
 
-                selectAndDisplayQuestions('balanced');
-                startTimer();
+                // Load exams from localStorage or generate new ones
+                const savedExams = localStorage.getItem('exams');
+                if (savedExams && completedExams.size < 8) {
+                    exams = JSON.parse(savedExams);
+                    console.log('Loaded exams from localStorage');
+                } else {
+                    generateNewExams();
+                }
+
+                // Show home screen with 8 exam buttons
+                showHomeScreen();
             } catch (error) {
                 console.error('Error loading questions:', error);
-                document.getElementById('quizContent').innerHTML = '<p style="color: red;">❌ Lỗi khi tải câu hỏi. Vui lòng kiểm tra lại.</p>';
+                document.getElementById('homeScreen').innerHTML = '<p style="color: red;">❌ Lỗi khi tải câu hỏi.</p>';
             }
         }
 
-        // Balanced selection: mix questions from different test sets
-        function selectBalancedQuestions(availableQuestions, count) {
-            // Group by question text to identify source
-            const bySource = {};
-            availableQuestions.forEach(q => {
-                const key = q.question.substring(0, 20);
-                if (!bySource[key]) bySource[key] = [];
-                bySource[key].push(q);
-            });
+        function generateNewExams() {
+            exams = [];
+            completedExams.clear();
+            examResults = {};
+            const usedIndices = new Set();
 
-            const selected = [];
-            const sources = Object.keys(bySource);
-            
-            // Round-robin selection from different sources
-            let sourceIndex = 0;
-            while (selected.length < count && sources.length > 0) {
-                const source = sources[sourceIndex % sources.length];
-                if (bySource[source].length > 0) {
-                    const randomIdx = Math.floor(Math.random() * bySource[source].length);
-                    selected.push(bySource[source][randomIdx]);
-                    bySource[source].splice(randomIdx, 1);
-                }
-                sourceIndex++;
-                if (bySource[source] && bySource[source].length === 0) {
-                    sources.splice(sourceIndex % sources.length, 1);
-                }
-            }
-
-            return selected;
-        }
-
-        function selectAndDisplayQuestions(mode) {
-            let candidates;
-
-            if (mode === 'new') {
-                // New set: get new questions (attempt already incremented in submitQuiz)
+            for (let i = 0; i < 8; i++) {
+                const examQuestions = [];
+                let attempts = 0;
                 
-                // Get unused questions
-                candidates = allQuestions.filter(q => !usedQuestionIds.has(getQuestionHash(q)));
-                if (candidates.length < 60) {
-                    usedQuestionIds.clear();
-                    localStorage.removeItem('usedQuestionIds');
-                    candidates = allQuestions;
-                }
-            } else if (mode === 'unseen') {
-                // Get only questions not seen before
-                candidates = allQuestions.filter(q => !usedQuestionIds.has(getQuestionHash(q)));
-                
-                // Check if this is attempt 9 (last attempt of cycle)
-                if (attemptNumber === 9) {
-                    // For attempt 9: take remaining unused + all wrong questions, total = 60
-                    const wrongQuestions = allQuestions.filter(q => wrongQuestionIds.has(getQuestionHash(q)));
-                    const remaining = candidates; // Unused questions
-                    
-                    // Combine: remaining + wrong questions
-                    let combined = remaining.concat(wrongQuestions);
-                    
-                    // If total < 60, add more random questions
-                    if (combined.length < 60) {
-                        const additionalNeeded = 60 - combined.length;
-                        const alreadyUsed = new Set(combined.map(q => getQuestionHash(q)));
-                        const extraCandidates = allQuestions.filter(q => !alreadyUsed.has(getQuestionHash(q)));
-                        const extra = selectBalancedQuestions(extraCandidates, additionalNeeded);
-                        combined = combined.concat(extra);
+                while (examQuestions.length < 60 && attempts < 1000) {
+                    const idx = Math.floor(Math.random() * allQuestions.length);
+                    if (!usedIndices.has(idx)) {
+                        examQuestions.push(allQuestions[idx]);
+                        usedIndices.add(idx);
                     }
-                    
-                    candidates = combined;
-                } else if (candidates.length < 60) {
-                    usedQuestionIds.clear();
-                    localStorage.removeItem('usedQuestionIds');
-                    candidates = allQuestions;
+                    attempts++;
                 }
-            } else if (mode === 'wrong') {
-                // Get only wrong questions
-                candidates = allQuestions.filter(q => wrongQuestionIds.has(getQuestionHash(q)));
-                if (candidates.length === 0) {
-                    alert('Bạn chưa có câu sai nào. Hãy làm bộ câu mới trước!');
-                    selectAndDisplayQuestions('balanced');
-                    return;
-                }
-            } else {
-                candidates = allQuestions;
+                
+                exams.push(examQuestions);
+                console.log(`Exam ${i + 1}: ${examQuestions.length} questions`);
             }
 
-            // Select questions
-            selectedQuestions = selectBalancedQuestions(candidates, Math.min(60, candidates.length));
-
-            // Reset question index
-            currentQuestionIndex = 0;
-
-            // Initialize answers
-            answers = {};
-            selectedQuestions.forEach((q, idx) => {
-                answers[idx] = null;
-            });
-
-            displayQuiz();
+            // Save exams to localStorage
+            localStorage.setItem('exams', JSON.stringify(exams));
+            localStorage.setItem('completedExams', JSON.stringify(Array.from(completedExams)));
+            localStorage.setItem('examResults', JSON.stringify(examResults));
         }
 
         function getQuestionHash(q) {
             return q.question.substring(0, 50) + '|' + q.answers.map(a => a.text).join('|');
         }
 
-        function displayQuiz() {
-            const quizContent = document.getElementById('quizContent');
-            const navigation = document.getElementById('navigation');
-            
-            quizContent.innerHTML = '';
-            navigation.style.display = 'flex';
+        function showHomeScreen() {
+            document.getElementById('quizScreen').style.display = 'none';
+            document.getElementById('resultsScreen').style.display = 'none';
+            document.getElementById('homeScreen').style.display = 'block';
 
-            const q = selectedQuestions[currentQuestionIndex];
-            
-            let html = `
-                <div class="question-container">
-                    <div class="question-header">
-                        <span class="question-number">Câu ${currentQuestionIndex + 1}/60</span>
-                    </div>
-                    <div class="question-text">${q.question}</div>
-                    <div class="answers" id="answers">
-            `;
+            const examGrid = document.getElementById('examGrid');
+            examGrid.innerHTML = '';
 
-            q.answers.forEach((answer, idx) => {
-                const isChecked = answers[currentQuestionIndex] === idx ? 'checked' : '';
-                html += `
-                    <label class="answer ${isChecked ? 'selected' : ''}">
-                        <input type="radio" name="answer" value="${idx}" ${isChecked} onchange="selectAnswer(${idx})">
-                        <span>${answer.text}</span>
-                    </label>
-                `;
-            });
+            for (let i = 0; i < 8; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'exam-btn';
+                const isDone = completedExams.has(i);
+                
+                let innerHTML = `<span class="exam-title">Đề ${i + 1}</span>`;
+                
+                if (isDone && examResults[i]) {
+                    const result = examResults[i];
+                    const isPerfect = result.correct === result.total;
+                    const icon = isPerfect ? '✅' : '❌';
+                    innerHTML = `<span class="exam-title">Đề ${i + 1} ${icon}</span>`;
+                    innerHTML += `<span class="exam-result">${result.correct}/${result.total}, ${result.total - result.correct} sai</span>`;
+                    btn.onclick = () => showExamOptions(i, result);
+                } else {
+                    btn.onclick = () => startExam(i);
+                }
+                
+                btn.innerHTML = innerHTML;
+                examGrid.appendChild(btn);
+            }
 
-            html += `</div></div>`;
-            quizContent.innerHTML = html;
-
-            // Update progress - show actual count for "wrong" mode
-            const totalQuestions = selectedQuestions.length;
-            const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
-            document.getElementById('progressFill').style.width = progress + '%';
-            document.getElementById('progressText').textContent = `${currentQuestionIndex + 1}/${totalQuestions}`;
-
-            // Update buttons
-            document.getElementById('btnPrevious').disabled = currentQuestionIndex === 0;
-            
-            if (currentQuestionIndex === selectedQuestions.length - 1) {
-                document.getElementById('btnNext').style.display = 'none';
-                document.getElementById('btnSubmit').style.display = 'block';
-            } else {
-                document.getElementById('btnNext').style.display = 'block';
-                document.getElementById('btnSubmit').style.display = 'none';
+            // Check if all 8 exams are completed
+            if (completedExams.size === 8) {
+                const msg = document.createElement('p');
+                msg.style.marginTop = '20px';
+                msg.style.color = '#ff69b4';
+                msg.style.fontSize = '1.1em';
+                msg.innerHTML = '🎉 Hoàn thành hết 8 đề! Hãy refresh để random lại.';
+                examGrid.parentElement.appendChild(msg);
             }
         }
 
-        function selectAnswer(answerIndex) {
-            answers[currentQuestionIndex] = answerIndex;
+        function showExamOptions(examId, result) {
+            const isPerfect = result.correct === result.total;
+            const hasWrong = result.wrongQuestions && result.wrongQuestions.length > 0;
+            
+            let message = `Đề ${examId + 1}: ${result.correct}/${result.total}\n\n`;
+            
+            if (isPerfect) {
+                message += 'Bạn đã hoàn thành hoàn hảo! ✅\n\n';
+            } else {
+                message += `Còn ${result.total - result.correct} câu sai.\n\n`;
+            }
+            
+            // Create a custom dialog
+            const options = [];
+            options.push({ text: 'Làm lại đề', action: () => startExam(examId) });
+            if (hasWrong) {
+                options.push({ text: 'Ôn tập câu sai', action: () => reviewWrongQuestionsForExam(examId) });
+            }
+            options.push({ text: 'Đóng', action: () => {} });
+            
+            let optionsText = message;
+            options.forEach((opt, idx) => {
+                optionsText += `${idx + 1}. ${opt.text}\n`;
+            });
+            
+            const choice = prompt(optionsText, '1');
+            if (choice && parseInt(choice) > 0 && parseInt(choice) <= options.length) {
+                options[parseInt(choice) - 1].action();
+            }
+        }
+
+        function reviewWrongQuestionsForExam(examId) {
+            const wrongQuestions = examResults[examId]?.wrongQuestions || [];
+            
+            if (wrongQuestions.length === 0) {
+                alert('Không có câu sai để ôn tập!');
+                return;
+            }
+            
+            reviewMode = true;
+            reviewingExamId = examId; // Track which exam is being reviewed
+            selectedQuestions = wrongQuestions;
+            currentQuestionIndex = 0;
+            answers = {};
+            timeRemaining = Math.max(1800, wrongQuestions.length * 30);
+
+            selectedQuestions.forEach((q, idx) => {
+                answers[idx] = null;
+            });
+
+            document.getElementById('homeScreen').style.display = 'none';
+            document.getElementById('resultsScreen').style.display = 'none';
+            document.getElementById('quizScreen').style.display = 'block';
+            document.getElementById('examLabel').textContent = `Ôn tập câu sai - Đề ${examId + 1} (${wrongQuestions.length} câu)`;
+
             displayQuiz();
+            startTimer();
+        }
+
+        function startExam(examId) {
+            currentExamId = examId;
+            reviewMode = false;
+            selectedQuestions = exams[examId];
+            currentQuestionIndex = 0;
+            answers = {};
+            timeRemaining = 3000;
+
+            // Initialize answers
+            selectedQuestions.forEach((q, idx) => {
+                answers[idx] = null;
+            });
+
+            document.getElementById('homeScreen').style.display = 'none';
+            document.getElementById('resultsScreen').style.display = 'none';
+            document.getElementById('quizScreen').style.display = 'block';
+            document.getElementById('examLabel').textContent = `Đề ${examId + 1}`;
+
+            displayQuiz();
+            startTimer();
+        }
+
+        function reviewWrongQuestions() {
+            currentExamId = -1; // Special ID for review mode
+            reviewMode = true;
+            const wrongQuestions = examResults[currentExamId + 1]?.wrongQuestions || [];
+            
+            if (wrongQuestions.length === 0) {
+                alert('Không có câu sai để ôn tập!');
+                return;
+            }
+            
+            selectedQuestions = wrongQuestions;
+            currentQuestionIndex = 0;
+            answers = {};
+            timeRemaining = Math.max(1800, wrongQuestions.length * 30); // Min 30 min, or 30 sec per question
+
+            // Initialize answers
+            selectedQuestions.forEach((q, idx) => {
+                answers[idx] = null;
+            });
+
+            document.getElementById('homeScreen').style.display = 'none';
+            document.getElementById('resultsScreen').style.display = 'none';
+            document.getElementById('quizScreen').style.display = 'block';
+            document.getElementById('examLabel').textContent = `Ôn tập câu sai (${wrongQuestions.length} câu)`;
+
+            displayQuiz();
+            startTimer();
+        }
+
+        function displayQuiz() {
+            const q = selectedQuestions[currentQuestionIndex];
+            const progress = ((currentQuestionIndex) / selectedQuestions.length) * 100;
+
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('progressText').textContent = `${currentQuestionIndex + 1}/${selectedQuestions.length}`;
+            document.getElementById('questionNumber').textContent = `Câu ${currentQuestionIndex + 1}/${selectedQuestions.length}`;
+            document.getElementById('questionText').textContent = q.question;
+
+            const answersContainer = document.getElementById('answersContainer');
+            answersContainer.innerHTML = '';
+
+            q.answers.forEach((answer, idx) => {
+                const isSelected = answers[currentQuestionIndex] === idx;
+                const div = document.createElement('div');
+                div.className = 'answer-option';
+                div.innerHTML = `
+                    <input type="radio" id="answer${idx}" name="answer" value="${idx}" ${isSelected ? 'checked' : ''} onchange="answers[${currentQuestionIndex}] = ${idx}">
+                    <label for="answer${idx}">${answer.text}</label>
+                `;
+                answersContainer.appendChild(div);
+            });
+
+            // Update button states
+            document.getElementById('btnPrevious').disabled = currentQuestionIndex === 0;
+            document.getElementById('btnNext').style.display = currentQuestionIndex === selectedQuestions.length - 1 ? 'none' : 'block';
+            document.getElementById('btnSubmit').style.display = currentQuestionIndex === selectedQuestions.length - 1 ? 'block' : 'none';
         }
 
         function previousQuestion() {
@@ -512,69 +652,99 @@
 
         function submitQuiz() {
             clearInterval(timerInterval);
-            
+
             let correctCount = 0;
+            let wrongQuestions = [];
             
             selectedQuestions.forEach((q, idx) => {
                 const selectedAnswerIdx = answers[idx];
                 const isCorrect = selectedAnswerIdx !== null && q.answers[selectedAnswerIdx].is_correct;
-                const qHash = getQuestionHash(q);
                 
                 if (isCorrect) {
                     correctCount++;
-                    // Remove from wrong list if answer is now correct
-                    wrongQuestionIds.delete(qHash);
                 } else {
-                    // Add to wrong list if answer is incorrect
-                    wrongQuestionIds.add(qHash);
+                    wrongQuestions.push(q);
                 }
             });
 
-            // Save wrong questions to localStorage
-            localStorage.setItem('wrongQuestionIds', JSON.stringify(Array.from(wrongQuestionIds)));
-
-            // Mark all questions as used (for attempts 1-8)
-            if (attemptNumber < 9) {
-                selectedQuestions.forEach(q => {
-                    usedQuestionIds.add(getQuestionHash(q));
-                });
-                localStorage.setItem('usedQuestionIds', JSON.stringify(Array.from(usedQuestionIds)));
+            // Mark exam as completed (only if not review mode)
+            if (!reviewMode && currentExamId >= 0 && currentExamId < 8) {
+                completedExams.add(currentExamId);
+                examResults[currentExamId] = {
+                    correct: correctCount,
+                    total: selectedQuestions.length,
+                    wrongQuestions: wrongQuestions
+                };
+                localStorage.setItem('completedExams', JSON.stringify(Array.from(completedExams)));
+                localStorage.setItem('examResults', JSON.stringify(examResults));
+            } else if (reviewMode && reviewingExamId >= 0 && reviewingExamId < 8) {
+                // Update results if review score is better
+                const oldResult = examResults[reviewingExamId];
+                const newCorrect = oldResult.correct + correctCount;
+                
+                examResults[reviewingExamId] = {
+                    correct: newCorrect,
+                    total: oldResult.total,
+                    wrongQuestions: wrongQuestions
+                };
+                
+                localStorage.setItem('examResults', JSON.stringify(examResults));
             }
 
-            // Increment attempt and check if reached 9
-            attemptNumber++;
-            if (attemptNumber > 9) {
-                attemptNumber = 1; // Reset to 1 after lần 9
-                usedQuestionIds.clear(); // Reset used questions for new cycle
-                localStorage.removeItem('usedQuestionIds');
-                wrongQuestionIds.clear(); // Also reset wrong questions for fresh cycle
-                localStorage.removeItem('wrongQuestionIds');
-            }
-            localStorage.setItem('attemptNumber', attemptNumber);
+            const percentage = Math.round((correctCount / selectedQuestions.length) * 100);
 
-            const percentage = Math.round((correctCount / 60) * 100);
-            
-            document.getElementById('quizContent').innerHTML = '';
-            document.getElementById('navigation').style.display = 'none';
-            document.getElementById('scoreDisplay').textContent = `${correctCount}/60`;
+            document.getElementById('quizScreen').style.display = 'none';
+            document.getElementById('scoreDisplay').textContent = `${correctCount}/${selectedQuestions.length}`;
             document.getElementById('scoreDetails').textContent = `Điểm: ${percentage}%`;
-            document.getElementById('wrongCountNum').textContent = 60 - correctCount;
-            document.getElementById('results').classList.add('show');
+            document.getElementById('wrongCountNum').textContent = selectedQuestions.length - correctCount;
+            
+            // Show review button only if there are wrong questions and not in review mode
+            const reviewBtn = document.getElementById('reviewBtn');
+            if (!reviewMode && wrongQuestions.length > 0) {
+                reviewBtn.style.display = 'block';
+                // Update the reviewWrongQuestions function to use the current wrong questions
+                reviewBtn.onclick = () => {
+                    const currentExamIdTemp = currentExamId;
+                    selectedQuestions = wrongQuestions;
+                    startReview(wrongQuestions);
+                };
+            } else {
+                reviewBtn.style.display = 'none';
+            }
+            
+            document.getElementById('resultsScreen').style.display = 'block';
         }
 
-        function restartQuiz(mode) {
-            // Reset UI
-            document.getElementById('results').classList.remove('show');
-            document.getElementById('quizContent').innerHTML = '<div class="spinner"></div><p>Đang tải câu hỏi...</p>';
-            document.getElementById('quizContent').classList.add('loading');
-            
-            // Reset timer
-            timeRemaining = 3000;
-            document.getElementById('timerDisplay').textContent = '50:00';
-            
-            // Load new questions
-            selectAndDisplayQuestions(mode);
+        function startReview(wrongQuestions) {
+            reviewMode = true;
+            selectedQuestions = wrongQuestions;
+            currentQuestionIndex = 0;
+            answers = {};
+            timeRemaining = Math.max(1800, wrongQuestions.length * 30);
+
+            selectedQuestions.forEach((q, idx) => {
+                answers[idx] = null;
+            });
+
+            document.getElementById('resultsScreen').style.display = 'none';
+            document.getElementById('quizScreen').style.display = 'block';
+            document.getElementById('examLabel').textContent = `Ôn tập câu sai (${wrongQuestions.length} câu)`;
+
+            displayQuiz();
             startTimer();
+        }
+
+        function retryExam() {
+            if (reviewMode) {
+                goHome();
+            } else {
+                startExam(currentExamId);
+            }
+        }
+
+        function goHome() {
+            reviewMode = false;
+            showHomeScreen();
         }
 
         function startTimer() {
@@ -582,8 +752,7 @@
                 timeRemaining--;
                 const minutes = Math.floor(timeRemaining / 60);
                 const seconds = timeRemaining % 60;
-                document.getElementById('timerDisplay').textContent = 
-                    `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                document.getElementById('timerDisplay').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
 
                 if (timeRemaining <= 0) {
                     clearInterval(timerInterval);
@@ -592,8 +761,8 @@
             }, 1000);
         }
 
-        // Load questions when page loads
-        window.addEventListener('load', loadQuestions);
+        // Load on page load
+        window.addEventListener('load', loadQuestionsAndGenerateExams);
     </script>
 </body>
 </html>
