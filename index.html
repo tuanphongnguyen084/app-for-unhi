@@ -563,6 +563,7 @@
         function startExam(examId) {
             currentExamId = examId;
             reviewMode = false;
+            reviewingExamId = -1; // Reset review state
             selectedQuestions = exams[examId];
             currentQuestionIndex = 0;
             answers = {};
