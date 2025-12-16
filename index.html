@@ -462,6 +462,7 @@
             document.getElementById('resultsScreen').style.display = 'none';
             document.getElementById('homeScreen').style.display = 'block';
 
+            const header = document.querySelector('header h2');
             const examGrid = document.getElementById('examGrid');
             examGrid.innerHTML = '';
 
@@ -489,12 +490,13 @@
 
             // Check if all 8 exams are completed
             if (completedExams.size === 8) {
-                const msg = document.createElement('p');
-                msg.style.marginTop = '20px';
-                msg.style.color = '#ff69b4';
-                msg.style.fontSize = '1.1em';
-                msg.innerHTML = '🎉 Hoàn thành hết 8 đề! Hãy refresh để random lại.';
-                examGrid.parentElement.appendChild(msg);
+                if (header) {
+                    header.textContent = 'xong rồi, thi tốt nhé 🍀';
+                }
+            } else {
+                if (header) {
+                    header.textContent = 'Pick đeee!';
+                }
             }
         }
 
