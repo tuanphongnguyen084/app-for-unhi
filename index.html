@@ -374,16 +374,7 @@
             let candidates;
 
             if (mode === 'new') {
-                // New set: increment attempt and get new questions
-                attemptNumber++;
-                if (attemptNumber > 9) {
-                    attemptNumber = 1; // Reset cycle
-                    usedQuestionIds.clear();
-                    localStorage.removeItem('usedQuestionIds');
-                    wrongQuestionIds.clear();
-                    localStorage.removeItem('wrongQuestionIds');
-                }
-                localStorage.setItem('attemptNumber', attemptNumber);
+                // New set: get new questions (attempt already incremented in submitQuiz)
                 
                 // Get unused questions
                 candidates = allQuestions.filter(q => !usedQuestionIds.has(getQuestionHash(q)));
