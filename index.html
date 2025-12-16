@@ -438,14 +438,6 @@
             // Reset question index
             currentQuestionIndex = 0;
 
-            // Mark as used (only for attempts 1-8)
-            if (attemptNumber < 9) {
-                selectedQuestions.forEach(q => {
-                    usedQuestionIds.add(getQuestionHash(q));
-                });
-                localStorage.setItem('usedQuestionIds', JSON.stringify(Array.from(usedQuestionIds)));
-            }
-
             // Initialize answers
             answers = {};
             selectedQuestions.forEach((q, idx) => {
