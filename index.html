@@ -550,6 +550,14 @@
             // Save wrong questions to localStorage
             localStorage.setItem('wrongQuestionIds', JSON.stringify(Array.from(wrongQuestionIds)));
 
+            // Mark all questions as used (for attempts 1-8)
+            if (attemptNumber < 9) {
+                selectedQuestions.forEach(q => {
+                    usedQuestionIds.add(getQuestionHash(q));
+                });
+                localStorage.setItem('usedQuestionIds', JSON.stringify(Array.from(usedQuestionIds)));
+            }
+
             // Increment attempt and check if reached 9
             attemptNumber++;
             if (attemptNumber > 9) {
