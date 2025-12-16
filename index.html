@@ -250,14 +250,14 @@
     <div class="container">
         <header>
             <h1>Lịch sử Đảng 💖</h1>
-            <div class="timer">Thời gian: <span id="timerDisplay">60:00</span></div>
+            <div class="timer">Thời gian: <span id="timerDisplay">50:00</span></div>
         </header>
 
         <div class="progress">
             <div class="progress-bar">
                 <div class="progress-fill" id="progressFill"></div>
             </div>
-            <div class="progress-text"><span id="progressText">0/50</span></div>
+            <div class="progress-text"><span id="progressText">0/60</span></div>
         </div>
 
         <div id="quizContent" class="loading">
@@ -267,7 +267,7 @@
 
         <div class="results" id="results">
             <h2>✅ Hoàn thành!</h2>
-            <div class="score" id="scoreDisplay">0/50</div>
+            <div class="score" id="scoreDisplay">0/60</div>
             <div class="score-details" id="scoreDetails"></div>
             <div id="wrongCount" style="font-size: 1.1em; color: #e74c3c; margin: 15px 0;">Câu sai: <strong id="wrongCountNum">0</strong></div>
             <div style="display: flex; gap: 15px; justify-content: center; margin-top: 30px; flex-wrap: wrap;">
@@ -289,11 +289,11 @@
         let selectedQuestions = [];
         let currentQuestionIndex = 0;
         let answers = {};
-        let timeRemaining = 3600; // 60 minutes in seconds
+        let timeRemaining = 3000; // 50 minutes in seconds
         let timerInterval;
         let usedQuestionIds = new Set();
         let wrongQuestionIds = new Set();
-        let attemptNumber = 1; // Track which attempt (1-11 then reset)
+        let attemptNumber = 1; // Track which attempt (1-9 then reset)
 
         // Validate question has full 4 answers
         function hasFullAnswers(q) {
@@ -377,19 +377,26 @@
                 // Get only questions not seen before
                 candidates = allQuestions.filter(q => !usedQuestionIds.has(getQuestionHash(q)));
                 
-                // Check if this is attempt 10 (last attempt of cycle)
-                if (attemptNumber === 10) {
-                    // For attempt 10: take remaining unused + all wrong questions
+                // Check if this is attempt 9 (last attempt of cycle)
+                if (attemptNumber === 9) {
+                    // For attempt 9: take remaining unused + all wrong questions, total = 60
                     const wrongQuestions = allQuestions.filter(q => wrongQuestionIds.has(getQuestionHash(q)));
+                    const remaining = candidates; // Unused questions
                     
-                    if (candidates.length + wrongQuestions.length === 0) {
-                        alert('Không có câu để làm. Hãy làm bộ câu mới!');
-                        return;
+                    // Combine: remaining + wrong questions
+                    let combined = remaining.concat(wrongQuestions);
+                    
+                    // If total < 60, add more random questions
+                    if (combined.length < 60) {
+                        const additionalNeeded = 60 - combined.length;
+                        const alreadyUsed = new Set(combined.map(q => getQuestionHash(q)));
+                        const extraCandidates = allQuestions.filter(q => !alreadyUsed.has(getQuestionHash(q)));
+                        const extra = selectBalancedQuestions(extraCandidates, additionalNeeded);
+                        combined = combined.concat(extra);
                     }
                     
-                    // Combine remaining + wrong questions
-                    candidates = candidates.concat(wrongQuestions);
-                } else if (candidates.length < 50) {
+                    candidates = combined;
+                } else if (candidates.length < 60) {
                     usedQuestionIds.clear();
                     localStorage.removeItem('usedQuestionIds');
                     candidates = allQuestions;
@@ -407,13 +414,13 @@
             }
 
             // Select questions
-            selectedQuestions = selectBalancedQuestions(candidates, Math.min(50, candidates.length));
+            selectedQuestions = selectBalancedQuestions(candidates, Math.min(60, candidates.length));
 
             // Reset question index
             currentQuestionIndex = 0;
 
-            // Mark as used (only for attempts 1-9)
-            if (attemptNumber < 10) {
+            // Mark as used (only for attempts 1-8)
+            if (attemptNumber < 9) {
                 selectedQuestions.forEach(q => {
                     usedQuestionIds.add(getQuestionHash(q));
                 });
@@ -445,7 +452,7 @@
             let html = `
                 <div class="question-container">
                     <div class="question-header">
-                        <span class="question-number">Câu ${currentQuestionIndex + 1}/50</span>
+                        <span class="question-number">Câu ${currentQuestionIndex + 1}/60</span>
                     </div>
                     <div class="question-text">${q.question}</div>
                     <div class="answers" id="answers">
@@ -524,10 +531,10 @@
             // Save wrong questions to localStorage
             localStorage.setItem('wrongQuestionIds', JSON.stringify(Array.from(wrongQuestionIds)));
 
-            // Increment attempt and check if reached 10
+            // Increment attempt and check if reached 9
             attemptNumber++;
-            if (attemptNumber > 10) {
-                attemptNumber = 1; // Reset to 1 after lần 10
+            if (attemptNumber > 9) {
+                attemptNumber = 1; // Reset to 1 after lần 9
                 usedQuestionIds.clear(); // Reset used questions for new cycle
                 localStorage.removeItem('usedQuestionIds');
                 wrongQuestionIds.clear(); // Also reset wrong questions for fresh cycle
@@ -535,13 +542,13 @@
             }
             localStorage.setItem('attemptNumber', attemptNumber);
 
-            const percentage = Math.round((correctCount / 50) * 100);
+            const percentage = Math.round((correctCount / 60) * 100);
             
             document.getElementById('quizContent').innerHTML = '';
             document.getElementById('navigation').style.display = 'none';
-            document.getElementById('scoreDisplay').textContent = `${correctCount}/50`;
+            document.getElementById('scoreDisplay').textContent = `${correctCount}/60`;
             document.getElementById('scoreDetails').textContent = `Điểm: ${percentage}%`;
-            document.getElementById('wrongCountNum').textContent = 50 - correctCount;
+            document.getElementById('wrongCountNum').textContent = 60 - correctCount;
             document.getElementById('results').classList.add('show');
         }
 
@@ -552,8 +559,8 @@
             document.getElementById('quizContent').classList.add('loading');
             
             // Reset timer
-            timeRemaining = 3600;
-            document.getElementById('timerDisplay').textContent = '60:00';
+            timeRemaining = 3000;
+            document.getElementById('timerDisplay').textContent = '50:00';
             
             // Load new questions
             selectAndDisplayQuestions(mode);
