@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz - 50 Câu Hỏi Trắc Nghiệm</title>
+    <title>Lịch sử Đảng - Quiz Trắc Nghiệm</title>
     <style>
         * {
             margin: 0;
@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -30,7 +30,7 @@
         header {
             text-align: center;
             margin-bottom: 30px;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 3px solid #ff69b4;
             padding-bottom: 20px;
         }
 
@@ -61,7 +61,7 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(90deg, #ff69b4 0%, #ff1493 100%);
             width: 0%;
             transition: width 0.3s ease;
         }
@@ -84,7 +84,7 @@
         }
 
         .question-number {
-            color: #667eea;
+            color: #ff69b4;
             font-weight: bold;
             font-size: 1.1em;
         }
@@ -112,8 +112,8 @@
         }
 
         .answer:hover {
-            border-color: #667eea;
-            background: #f0f4ff;
+            border-color: #ff69b4;
+            background: #ffe0f0;
         }
 
         .answer input[type="radio"] {
@@ -129,8 +129,8 @@
         }
 
         .answer.selected {
-            border-color: #667eea;
-            background: #f0f4ff;
+            border-color: #ff69b4;
+            background: #ffe0f0;
         }
 
         .navigation {
@@ -165,23 +165,23 @@
         }
 
         .btn-next {
-            background: #667eea;
+            background: #ff69b4;
             color: white;
             flex-grow: 1;
         }
 
         .btn-next:hover {
-            background: #5568d3;
+            background: #ff1493;
         }
 
         .btn-submit {
-            background: #27ae60;
+            background: #c2185b;
             color: white;
             flex-grow: 1;
         }
 
         .btn-submit:hover {
-            background: #229954;
+            background: #a01545;
         }
 
         .results {
@@ -201,7 +201,7 @@
 
         .score {
             font-size: 3em;
-            color: #667eea;
+            color: #ff69b4;
             font-weight: bold;
             margin: 20px 0;
         }
@@ -213,14 +213,14 @@
         }
 
         .btn-restart {
-            background: #667eea;
+            background: #ff69b4;
             color: white;
             padding: 15px 40px;
             font-size: 1.1em;
         }
 
         .btn-restart:hover {
-            background: #5568d3;
+            background: #ff1493;
         }
 
         .loading {
@@ -232,7 +232,7 @@
 
         .spinner {
             border: 4px solid #f3f3f3;
-            border-top: 4px solid #667eea;
+            border-top: 4px solid #ff69b4;
             border-radius: 50%;
             width: 40px;
             height: 40px;
@@ -249,7 +249,7 @@
 <body>
     <div class="container">
         <header>
-            <h1>🎯 Quiz - Trắc Nghiệm</h1>
+            <h1>🎯 Lịch sử Đảng 💖</h1>
             <div class="timer">⏱️ Thời gian: <span id="timerDisplay">60:00</span></div>
         </header>
 
@@ -380,17 +380,15 @@
             } else if (mode === 'wrong') {
                 // Get only wrong questions
                 candidates = allQuestions.filter(q => wrongQuestionIds.has(getQuestionHash(q)));
-                if (candidates.length < 5) {
-                    // Not enough wrong questions
-                    alert('Bạn chưa có đủ câu sai để ôn tập (cần ít nhất 5 câu)');
+                if (candidates.length === 0) {
+                    // No wrong questions yet
+                    alert('Bạn chưa có câu sai nào. Hãy làm bộ câu mới trước!');
                     selectAndDisplayQuestions('balanced');
                     return;
                 }
-                // Pad with random if fewer than 50
+                // If fewer than 50 wrong questions, show only the wrong ones
                 if (candidates.length < 50) {
-                    const other = allQuestions.filter(q => !wrongQuestionIds.has(getQuestionHash(q)));
-                    const padding = selectBalancedQuestions(other, 50 - candidates.length);
-                    candidates = candidates.concat(padding);
+                    // Don't pad with other questions - only show wrong ones
                 }
             } else {
                 candidates = allQuestions;
@@ -398,6 +396,9 @@
 
             // Select questions
             selectedQuestions = selectBalancedQuestions(candidates, Math.min(50, candidates.length));
+
+            // Reset question index
+            currentQuestionIndex = 0;
 
             // Mark as used
             selectedQuestions.forEach(q => {
@@ -449,10 +450,11 @@
             html += `</div></div>`;
             quizContent.innerHTML = html;
 
-            // Update progress
-            const progress = ((currentQuestionIndex + 1) / 50) * 100;
+            // Update progress - show actual count for "wrong" mode
+            const totalQuestions = selectedQuestions.length;
+            const progress = ((currentQuestionIndex + 1) / totalQuestions) * 100;
             document.getElementById('progressFill').style.width = progress + '%';
-            document.getElementById('progressText').textContent = `${currentQuestionIndex + 1}/50`;
+            document.getElementById('progressText').textContent = `${currentQuestionIndex + 1}/${totalQuestions}`;
 
             // Update buttons
             document.getElementById('btnPrevious').disabled = currentQuestionIndex === 0;
@@ -493,12 +495,15 @@
             selectedQuestions.forEach((q, idx) => {
                 const selectedAnswerIdx = answers[idx];
                 const isCorrect = selectedAnswerIdx !== null && q.answers[selectedAnswerIdx].is_correct;
+                const qHash = getQuestionHash(q);
                 
                 if (isCorrect) {
                     correctCount++;
+                    // Remove from wrong list if answer is now correct
+                    wrongQuestionIds.delete(qHash);
                 } else {
-                    // Track wrong answer
-                    wrongQuestionIds.add(getQuestionHash(q));
+                    // Add to wrong list if answer is incorrect
+                    wrongQuestionIds.add(qHash);
                 }
             });
 
