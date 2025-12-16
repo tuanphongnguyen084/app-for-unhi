@@ -687,13 +687,23 @@
                 const oldResult = examResults[reviewingExamId];
                 const newCorrect = oldResult.correct + correctCount;
                 
+                // Only update wrongQuestions if current review has more wrong answers
+                // Otherwise keep the old wrongQuestions list reduced by corrected ones
+                let updatedWrongQuestions = oldResult.wrongQuestions || [];
+                if (wrongQuestions.length > 0) {
+                    // Keep only wrong questions that are still wrong after review
+                    updatedWrongQuestions = wrongQuestions;
+                }
+                
                 examResults[reviewingExamId] = {
                     correct: newCorrect,
                     total: oldResult.total,
-                    wrongQuestions: wrongQuestions
+                    wrongQuestions: updatedWrongQuestions
                 };
                 
                 localStorage.setItem('examResults', JSON.stringify(examResults));
+                reviewMode = false; // Reset review mode
+                reviewingExamId = -1; // Reset reviewing exam ID
             }
 
             const percentage = Math.round((correctCount / selectedQuestions.length) * 100);
@@ -748,6 +758,7 @@
 
         function goHome() {
             reviewMode = false;
+            reviewingExamId = -1;
             showHomeScreen();
         }
 
