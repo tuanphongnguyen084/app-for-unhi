@@ -441,6 +441,13 @@ function skipQuestion() {
     }
 }
 
+function endQuizEarly() {
+    const confirm = window.confirm('Bạn chắc chắn muốn kết thúc bài làm? Bài làm sẽ được nộp ngay.');
+    if (confirm) {
+        finishQuiz();
+    }
+}
+
 function goBack() {
     if (quizState.mode === 'lesson') {
         showLessonSelection();
