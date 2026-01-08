@@ -249,40 +249,55 @@ function showRandomExamOptions(examNum, result) {
 }
 
 function startRandomQuiz(numQuestions, examNum) {
-    // Collect all questions from all exams
-    let allQuestions = [];
-    Object.keys(allData).forEach(lessonId => {
-        const lesson = allData[lessonId];
-        Object.keys(lesson.exams).forEach(examId => {
-            const exam = lesson.exams[examId];
-            exam.questions.forEach((q, idx) => {
-                allQuestions.push({
-                    ...q,
-                    lessonId,
-                    examId,
-                    questionIndex: idx
+    const resultKey = `random-${examNum}`;
+    
+    // Check if this exam has been done before
+    if (examResults[resultKey] && examResults[resultKey].originalQuestions) {
+        // Reuse the same 40 questions
+        quizState.questions = examResults[resultKey].originalQuestions;
+    } else {
+        // First time: generate 40 random questions and save them
+        let allQuestions = [];
+        Object.keys(allData).forEach(lessonId => {
+            const lesson = allData[lessonId];
+            Object.keys(lesson.exams).forEach(examId => {
+                const exam = lesson.exams[examId];
+                exam.questions.forEach((q, idx) => {
+                    allQuestions.push({
+                        ...q,
+                        lessonId,
+                        examId,
+                        questionIndex: idx
+                    });
                 });
             });
         });
-    });
 
-    // Shuffle all questions
-    allQuestions = allQuestions.sort(() => Math.random() - 0.5);
-    
-    // Always get 40 questions - if less than 40, pad with random selection
-    const totalQuestionsNeeded = 40;
-    let selectedQuestions = allQuestions.slice(0, totalQuestionsNeeded);
-    
-    // If we need more questions to reach 40, add random duplicates
-    if (selectedQuestions.length < totalQuestionsNeeded) {
-        const needed = totalQuestionsNeeded - selectedQuestions.length;
-        for (let i = 0; i < needed; i++) {
-            const randomQ = allQuestions[Math.floor(Math.random() * allQuestions.length)];
-            selectedQuestions.push({...randomQ}); // Copy to avoid reference issues
+        // Shuffle all questions
+        allQuestions = allQuestions.sort(() => Math.random() - 0.5);
+        
+        // Always get 40 questions - if less than 40, pad with random selection
+        const totalQuestionsNeeded = 40;
+        let selectedQuestions = allQuestions.slice(0, totalQuestionsNeeded);
+        
+        // If we need more questions to reach 40, add random duplicates
+        if (selectedQuestions.length < totalQuestionsNeeded) {
+            const needed = totalQuestionsNeeded - selectedQuestions.length;
+            for (let i = 0; i < needed; i++) {
+                const randomQ = allQuestions[Math.floor(Math.random() * allQuestions.length)];
+                selectedQuestions.push({...randomQ});
+            }
         }
+        
+        quizState.questions = selectedQuestions;
+        
+        // Save original questions for future retries
+        if (!examResults[resultKey]) {
+            examResults[resultKey] = {};
+        }
+        examResults[resultKey].originalQuestions = selectedQuestions;
     }
     
-    quizState.questions = selectedQuestions;
     quizState.currentLesson = null; // Mark as random mode
     quizState.currentExam = examNum; // Store exam number
     
@@ -539,11 +554,16 @@ function showResults() {
         // Lưu luôn questions data để có thể làm lại câu sai
         const resultKey = `random-${quizState.currentExam}`;
         const wrongQuestions = quizState.incorrectIndices.map(idx => quizState.questions[idx]);
+        
+        // Preserve originalQuestions if it exists
+        const originalQuestions = examResults[resultKey] ? examResults[resultKey].originalQuestions : quizState.questions;
+        
         examResults[resultKey] = {
             correct: correct,
             total: quizState.questions.length,
             wrongIndices: quizState.incorrectIndices,
-            wrongQuestions: wrongQuestions  // Lưu full question data
+            wrongQuestions: wrongQuestions,  // Lưu full question data
+            originalQuestions: originalQuestions  // Giữ lại 40 câu gốc
         };
     }
     
