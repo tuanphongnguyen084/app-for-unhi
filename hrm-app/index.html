@@ -309,6 +309,113 @@
 
         .quiz-controls {
             display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* Question Grid */
+        .question-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(35px, 1fr));
+            gap: 8px;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #f5f7fa;
+            border-radius: 10px;
+        }
+
+        .grid-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 5px;
+            font-size: 0.85em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border: 2px solid #ddd;
+            background: white;
+            color: #333;
+        }
+
+        .grid-number:hover {
+            transform: scale(1.1);
+            border-color: #ff69b4;
+        }
+
+        .grid-number.answered {
+            background: #51cf66;
+            color: white;
+            border-color: #51cf66;
+        }
+
+        .grid-number.skipped {
+            background: #ffd700;
+            color: #333;
+            border-color: #ffc700;
+        }
+
+        .grid-number.incorrect {
+            background: #ff6b6b;
+            color: white;
+            border-color: #ff6b6b;
+        }
+
+        .grid-number.current {
+            background: #ff69b4;
+            color: white;
+            border-color: #ff69b4;
+            box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
+        }
+
+        .grid-legend {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f5f7fa;
+            border-radius: 8px;
+            flex-wrap: wrap;
+            font-size: 0.9em;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .legend-dot {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+            border: 2px solid #ddd;
+        }
+
+        .legend-dot.answered {
+            background: #51cf66;
+            border-color: #51cf66;
+        }
+
+        .legend-dot.skipped {
+            background: #ffd700;
+            border-color: #ffc700;
+        }
+
+        .legend-dot.incorrect {
+            background: #ff6b6b;
+            border-color: #ff6b6b;
+        }
+
+        .legend-dot.unanswered {
+            background: white;
+            border-color: #ddd;
+        }
+
+        .quiz-controls {
+            display: flex;
             justify-content: space-between;
             gap: 15px;
             margin-top: 30px;
@@ -493,6 +600,25 @@
                 </div>
                 <div class="timer" id="timer">60:00</div>
             </div>
+
+            <!-- Question Grid Legend -->
+            <div class="grid-legend">
+                <div class="legend-item">
+                    <div class="legend-dot answered"></div>
+                    <span>Đã làm</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot skipped"></div>
+                    <span>Bỏ qua</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-dot unanswered"></div>
+                    <span>Chưa làm</span>
+                </div>
+            </div>
+
+            <!-- Question Grid Navigation -->
+            <div class="question-grid" id="questionGrid"></div>
 
             <div class="question-container">
                 <div class="question-text">

@@ -373,6 +373,44 @@ function displayQuestion() {
         nextBtn.disabled = false;
         nextBtn.onclick = () => nextQuestion();
     }
+    
+    // Update question grid
+    updateQuestionGrid();
+}
+
+function updateQuestionGrid() {
+    const gridContainer = document.getElementById('questionGrid');
+    gridContainer.innerHTML = '';
+    
+    for (let i = 0; i < quizState.questions.length; i++) {
+        const gridNumber = document.createElement('div');
+        gridNumber.className = 'grid-number';
+        gridNumber.textContent = i + 1;
+        gridNumber.title = `Câu ${i + 1}`;
+        
+        // Mark current question
+        if (i === quizState.currentQuestionIndex) {
+            gridNumber.classList.add('current');
+        }
+        
+        // Mark answered questions
+        if (quizState.answers[i]) {
+            gridNumber.classList.add('answered');
+        }
+        
+        // Mark skipped questions
+        if (quizState.skipped.has(i)) {
+            gridNumber.classList.add('skipped');
+        }
+        
+        // Click to jump to question
+        gridNumber.onclick = () => {
+            quizState.currentQuestionIndex = i;
+            displayQuestion();
+        };
+        
+        gridContainer.appendChild(gridNumber);
+    }
 }
 
 function selectOption(letter) {
